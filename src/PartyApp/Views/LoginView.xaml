@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="PartyApp.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:r="clr-namespace:PartyApp.Properties"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PartyApp.Views"
+             xmlns:presentation="clr-namespace:PartyApp.Presentation"
+             xmlns:controls="clr-namespace:PartyApp.Controls"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="400" 
+             d:DesignWidth="300">
+    <UserControl.Resources>
+        <presentation:EmptyStringToVisibilityConverter x:Key="emptyStr2Vis"/>
+    </UserControl.Resources>
+    <StackPanel>
+        <Image
+            Margin="4, 4, 4, 70"
+            Source="/Presentation/Images/logotype-testio.png"
+            RenderOptions.BitmapScalingMode="HighQuality"/>
+        <controls:UsernameWatermarkTextBox 
+            x:Name="userNameTextBox"
+            Margin="4"
+            Focusable="False"/>
+        <controls:PasswordWatermarkBox
+            Margin="4"
+            Focusable="False"/>
+        <controls:LoginButton
+            Margin="4"
+            Height="{Binding ElementName=userNameTextBox, Path=ActualHeight}"/>
+        <TextBlock 
+            Margin="4"
+            TextAlignment="Center"
+            Foreground="Red"
+            IsEnabled="{Binding ErrorMessage, Converter={StaticResource emptyStr2Vis}}"
+            Text="{Binding ErrorMessage}"/>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="PartyApp.Views.MainWindow"
+        x:Name="ParentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:views="clr-namespace:PartyApp.Views"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
+        BorderThickness="2"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="PartyApp"
+        Height="780" 
+        Width="1460">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="bool2VisConverter"/>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush 
+            ImageSource="/Presentation/Images/main-background.png" 
+            RenderOptions.BitmapScalingMode="HighQuality"
+            Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <Grid 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <views:LoginView
+                Visibility="{Binding ElementName=ParentWindow, 
+                    Path=DataContext.LoginViewVisible, 
+                    Converter={StaticResource bool2VisConverter}}"/>
+        </Grid>
+        <Grid 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch">
+            <views:ServersView 
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Visibility="{Binding ElementName=ParentWindow, 
+                    Path=DataContext.ServersViewVisible, 
+                    Converter={StaticResource bool2VisConverter}}"/>
+        </Grid>
+    </Grid>
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger 
+            SourceObject="{Binding ErrorNotification}">
+            <prism:PopupWindowAction 
+                IsModal="True"
+                CenterOverAssociatedObject="True"
+                WindowStartupLocation="CenterOwner"/>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+</Window>
