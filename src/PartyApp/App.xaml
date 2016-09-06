@@ -8,9 +8,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Presentation/Theme.xaml"/>
-                <ResourceDictionary Source="Presentation/Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Presentation/Theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
        
     </Application.Resources>
