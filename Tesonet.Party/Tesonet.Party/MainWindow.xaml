@@ -3,10 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tesonet.Party"
+        xmlns:controls="clr-namespace:Tesonet.Party.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+
+    <Window.Background>
+        <ImageBrush ImageSource="Assets/background.png" />
+    </Window.Background>
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="270">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image Source="Assets/logotype-testio.png" HorizontalAlignment="Center" Stretch="Fill" Width="180" Margin="0,0,0,50"/>
+
+        <controls:WatermarkTextBox Grid.Row="1" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" WatermarkContent="Username" HorizontalAlignment="Stretch" Margin="0,5" Height="43" Background="White" Foreground="#999" BorderBrush="#000000" BorderThickness="1">
+            <controls:WatermarkTextBox.IconContent>
+                <ContentControl Style="{StaticResource Icons.User}" />
+            </controls:WatermarkTextBox.IconContent>
+        </controls:WatermarkTextBox>
+
+        <controls:WatermarkTextBox Grid.Row="2" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" WatermarkContent="Password" HorizontalAlignment="Stretch" Margin="0,5" Height="43" Background="White" Foreground="#999" BorderBrush="#000000" BorderThickness="1">
+            <controls:WatermarkTextBox.IconContent>
+                <ContentControl Style="{StaticResource Icons.Password}" />
+            </controls:WatermarkTextBox.IconContent>
+        </controls:WatermarkTextBox>
+
+        <Button Grid.Row="3" Content="Log in" Margin="0,5" Height="43" Style="{StaticResource Button.Login}" Command="{Binding LoginCommand}" IsDefault="True"/>
     </Grid>
 </Window>
