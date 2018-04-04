@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tesonet.Party.Contracts
 {
-    public class LoginResult : ActionResult
+    public class ActionResult
     {
-        public string Token { get; set; }
+        public string Message { get; set; }
     }
 }

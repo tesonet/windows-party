@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.8.4\lib\net46\CommonServiceLocator.dll</HintPath>
@@ -46,10 +49,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -96,15 +101,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contracts\ActionResult.cs" />
+    <Compile Include="Contracts\GetServersResult.cs" />
     <Compile Include="Contracts\SessionToken.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\IsNullConverter.cs" />
+    <Compile Include="Converters\NotOperatorValueConverter.cs" />
+    <Compile Include="ExceptionHandling\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionHandling\ExceptionHandler.cs" />
+    <Compile Include="Services\IShellService.cs" />
     <Compile Include="Utils\AwaitableDelegateCommand.cs" />
     <Compile Include="Contracts\Server.cs" />
     <Compile Include="Utils\DelegateCommand.cs" />
     <Compile Include="Services\ServiceAgent.cs" />
     <Compile Include="Services\SessionService.cs" />
     <Compile Include="ViewModels\LoginVM.cs" />
+    <Compile Include="ViewModels\ServersVM.cs" />
+    <Compile Include="ViewModels\ShellVM.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServersView.xaml.cs">
+      <DependentUpon>ServersView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ExceptionHandling\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -113,11 +140,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controls\WatermarkTextBox.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +190,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\logotype-testio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logotype-testio_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\servers_side.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

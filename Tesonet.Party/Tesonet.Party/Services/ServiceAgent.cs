@@ -11,42 +11,71 @@ namespace Tesonet.Party.Services
 {
     public interface ITesonetServiceAgent
     {
-        Task<SessionToken> Login(string username, string password);
-        Task<List<Server>> GetServers(string token);
+        Task<LoginResult> Login(string username, string password);
+        Task<GetServersResult> GetServers(string token);
     }
 
     public class TesonetServiceAgent : ITesonetServiceAgent
     {
-        private static string baseServiceUri = "http://playground.tesonet.lt/";
+        private static string baseServiceUri = "http://playground.tesonet.lt/v1/";
 
-        public async Task<SessionToken> Login(string username, string password)
+        public async Task<LoginResult> Login(string username, string password)
         {
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri(baseServiceUri);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var content = new FormUrlEncodedContent(new[]
+                using (var client = new HttpClient())
                 {
+                    client.BaseAddress = new Uri(baseServiceUri);
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var content = new FormUrlEncodedContent(new[]
+                    {
                     new KeyValuePair<string, string>("username", username),
                     new KeyValuePair<string, string>("password", password)
                 });
-                var result = await client.PostAsync("/v1/tokens", content);
-                return await result.Content.ReadAsAsync<SessionToken>();
+                    var response = await client.PostAsync("tokens", content);
+#if DEBUG
+                    await Task.Delay(1500);
+#endif
+                    return await response.Content.ReadAsAsync<LoginResult>();
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandling.ExceptionHandler.LogException(ex);
+                return new LoginResult() { Message = ex.Message };
             }
         }
 
-        public async Task<List<Server>> GetServers(string token)
+        public async Task<GetServersResult> GetServers(string token)
         {
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri(baseServiceUri);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(baseServiceUri);
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                client.DefaultRequestHeaders.Add("Authorization", token);
+                    client.DefaultRequestHeaders.Add("Authorization", token);
 
-                var result = await client.GetAsync("/v1/servers");
-                return await result.Content.ReadAsAsync<List<Server>>();
+                    var response = await client.GetAsync("servers");
+
+#if DEBUG
+                    await Task.Delay(1500);
+#endif
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var servers = await response.Content.ReadAsAsync<List<Server>>();
+                        return new GetServersResult() { Servers = servers };
+                    }
+                    else
+                        return await response.Content.ReadAsAsync<GetServersResult>();
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandling.ExceptionHandler.LogException(ex);
+                return new GetServersResult() { Message = ex.Message };
             }
         }
     }

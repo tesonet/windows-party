@@ -12,8 +12,10 @@ namespace Tesonet.Party.ViewModels
 {
     public interface ILoginVM
     {
+        bool IsBusy { get; set; }
         string Username { get; set; }
         string Password { get; set; }
+        string ErrorMessage { get; set; }
         IAsyncCommand LoginCommand { get; set; }
     }
 
@@ -34,17 +36,36 @@ namespace Tesonet.Party.ViewModels
 
         private async Task Login()
         {
-            var agent = container.Resolve<ITesonetServiceAgent>();
-            var token = await agent.Login(Username, Password);
+            ErrorMessage = null;
+            IsBusy = true;
 
-            Console.WriteLine($"Success {token}");
+            var result = await container.Resolve<ISessionService>().Login(Username, Password);
 
-            var servers = await agent.GetServers(token.Token);
+            IsBusy = false;
+            if (!string.IsNullOrEmpty(result))
+            {
+                ErrorMessage = result;
+            }
         }
 
         private bool CanLogin()
         {
-            return !string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password);
+            return !string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password) && !IsBusy;
+        }
+
+        private bool _IsBusy;
+        public bool IsBusy
+        {
+            get { return _IsBusy; }
+            set
+            {
+                if (_IsBusy != value)
+                {
+                    _IsBusy = value;
+                    OnPropertyChanged(nameof(IsBusy));
+                    LoginCommand.RaiseCanExecuteChanged();
+                }
+            }
         }
 
         private string _Username;
@@ -62,6 +83,7 @@ namespace Tesonet.Party.ViewModels
             }
         }
 
+        // TODO: 
         private string _Password;
         public string Password
         {
@@ -73,6 +95,20 @@ namespace Tesonet.Party.ViewModels
                     _Password = value;
                     OnPropertyChanged(nameof(Password));
                     LoginCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+
+        private string _ErrorMessage;
+        public string ErrorMessage
+        {
+            get { return _ErrorMessage; }
+            set
+            {
+                if (_ErrorMessage != value)
+                {
+                    _ErrorMessage = value;
+                    OnPropertyChanged(nameof(ErrorMessage));
                 }
             }
         }

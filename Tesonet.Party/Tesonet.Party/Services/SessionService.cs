@@ -9,7 +9,9 @@ namespace Tesonet.Party.Services
 {
     public interface ISessionService
     {
-        void Login(string username, string password);
+        Task<string> Login(string username, string password);
+        void Logout();
+        string Token { get; }
     }
 
     public class SessionService : ISessionService
@@ -21,10 +23,25 @@ namespace Tesonet.Party.Services
             this.container = container;
         }
 
-        public async void Login(string username, string password)
+        public async Task<string> Login(string username, string password)
         {
             var agent = container.Resolve<ITesonetServiceAgent>();
-            var token = await agent.Login(username, password);
+            var result = await agent.Login(username, password);
+            if (string.IsNullOrEmpty(result.Message))
+            {
+                Token = result.Token;
+                container.Resolve<IShellService>().LoginComplete();
+            }
+
+            return result.Message;
         }
+
+        public void Logout()
+        {
+            Token = null;
+            container.Resolve<IShellService>().ShowLogin();
+        }
+
+        public string Token { get; private set; }
     }
 }

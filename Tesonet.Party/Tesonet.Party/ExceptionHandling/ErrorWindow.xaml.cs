@@ -10,18 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Tesonet.Party.ViewModels;
 
-namespace Tesonet.Party
+namespace Tesonet.Party.ExceptionHandling
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for ErrorWindow.xaml
+    /// </summary>
+    public partial class ErrorWindow : Window
     {
-        public MainWindow(LoginVM viewModel)
+        public ErrorWindow(string message)
         {
             InitializeComponent();
-            DataContext = viewModel;
+            exceptionText.Text = message;
         }
     }
 }
