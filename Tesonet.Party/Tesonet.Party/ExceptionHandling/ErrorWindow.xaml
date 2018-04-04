@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tesonet.Party.ExceptionHandling"
         mc:Ignorable="d"
-        Title="Error" Height="300" Width="300">
+        Title="Error" Height="500" Width="500">
     <Grid>
-        <TextBox x:Name="exceptionText" Style="{StaticResource SelectableTextBlock}" />
+        <TextBox x:Name="exceptionText" Style="{StaticResource SelectableTextBlock}" AcceptsReturn="True" TextWrapping="Wrap" />
     </Grid>
 </Window>

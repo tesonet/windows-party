@@ -21,6 +21,9 @@ namespace Tesonet.Party
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            DispatcherUnhandledException += Application_UnhandledException;
+
             var container = new UnityContainer();
             container.RegisterType<ITesonetServiceAgent, TesonetServiceAgent>();
             container.RegisterType<ISessionService, SessionService>(new ContainerControlledLifetimeManager());
