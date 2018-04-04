@@ -654,7 +654,6 @@
 
     <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
         <Grid>
-            <Border CornerRadius="2" Background="#F0F0F0" />
             <Track Name="PART_Track" IsDirectionReversed="true">
                 <Track.DecreaseRepeatButton>
                     <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageUpCommand" />
@@ -674,7 +673,6 @@
     </ControlTemplate>
     <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
         <Grid>
-            <Border CornerRadius="2" Background="#F0F0F0" />
             <Track Name="PART_Track" IsDirectionReversed="False">
                 <Track.DecreaseRepeatButton>
                     <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageLeftCommand" />
@@ -698,11 +696,11 @@
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="Width" Value="Auto"/>
-                <Setter Property="Height" Value="10" />
+                <Setter Property="Height" Value="7" />
                 <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
             </Trigger>
             <Trigger Property="Orientation" Value="Vertical">
-                <Setter Property="Width" Value="10"/>
+                <Setter Property="Width" Value="7"/>
                 <Setter Property="Height" Value="Auto" />
                 <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
             </Trigger>
@@ -725,14 +723,15 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <ScrollContentPresenter Grid.Column="0"/>
+                        <ScrollContentPresenter Grid.Column="0" Grid.ColumnSpan="2" />
 
-                        <ScrollBar Grid.Column="1" Name="PART_VerticalScrollBar"
+                        <ScrollBar Grid.Column="1" Margin="2,0"
+                                   Name="PART_VerticalScrollBar"
                             Value="{TemplateBinding VerticalOffset}"
                             Maximum="{TemplateBinding ScrollableHeight}"
                             ViewportSize="{TemplateBinding ViewportHeight}"
                             Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
-                        <ScrollBar Name="PART_HorizontalScrollBar"
+                        <ScrollBar Name="PART_HorizontalScrollBar" Margin="0,2"
                             Orientation="Horizontal"
                             Grid.Row="1"
                             Grid.Column="0"
