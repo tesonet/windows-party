@@ -31,12 +31,12 @@ namespace Tesonet.Party.ViewModels
 
         public void ShowLogin()
         {
-            SelectedViewModel = container.Resolve<LoginVM>();
+            SelectedViewModel = container.Resolve<ILoginVM>();
         }
 
         public void LoginComplete()
         {
-            SelectedViewModel = container.Resolve<ServersVM>();
+            SelectedViewModel = container.Resolve<IServersVM>();
         }
     }
 }

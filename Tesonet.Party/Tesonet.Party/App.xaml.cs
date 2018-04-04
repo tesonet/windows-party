@@ -28,6 +28,8 @@ namespace Tesonet.Party
             container.RegisterType<ITesonetServiceAgent, TesonetServiceAgent>();
             container.RegisterType<ISessionService, SessionService>(new ContainerControlledLifetimeManager());
             container.RegisterType<IShellService, ShellVM>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IServersVM, ServersVM>();
+            container.RegisterType<ILoginVM, LoginVM>();
             container.Resolve<Shell>().Show();
         }
 

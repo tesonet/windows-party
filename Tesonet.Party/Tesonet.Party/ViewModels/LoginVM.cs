@@ -83,7 +83,6 @@ namespace Tesonet.Party.ViewModels
             }
         }
 
-        // TODO: 
         private string _Password;
         public string Password
         {

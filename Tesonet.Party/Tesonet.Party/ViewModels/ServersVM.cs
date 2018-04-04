@@ -12,7 +12,16 @@ using Unity;
 
 namespace Tesonet.Party.ViewModels
 {
-    public class ServersVM : ViewModelBase
+    public interface IServersVM
+    {
+        ObservableCollection<Server> Servers { get; }
+
+        bool IsBusy { get; set; }
+        string ErrorMessage { get; set; }
+        ICommand LogoutCommand { get; set; }
+    }
+
+    public class ServersVM : ViewModelBase, IServersVM
     {
         public ServersVM()
         {
