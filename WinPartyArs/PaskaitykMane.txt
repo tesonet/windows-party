@@ -1,0 +1,145 @@
+﻿Sveiki Tesonet!
+
+*** Įvadas :) ***
+
+Užduotis, kaip įgūdžių patikrinimui, pakankamai plati ir čia galima daugybę dalykų dar daryti, jei tai būtų tikras projektas.
+Tokiu atveju būtų daug daugiau informacijos, koks projekto tikslas, kokie būsimi langai, funkcionalumas ir t.t.
+Šiuo atveju, įvykdžiau užduotį pagal susikurtas prielaidas, tad tikiuosi Jūsų ir mano prielaidos sutampa, jeigu ne - galite
+patikslintį, adaptuosiuos.
+
+
+*** Svarbūs dalykai ***
+
+Ką daryčiau pirmiausia, jei dar turėčiau laiko: Žr. 8) ir 10) punktus.
+Kur skyriau daugiau nei įprasta dėmesio: Žr. 1) punktą (slaptažodžio saugumas, bei klasės aprašymas 9) punkte).
+UI neatitikimai ir feature'sai: Žr. 2) punktą.
+
+
+*** Likęs nebūtinas turinys ***
+
+Likusius punktus galite skaityti, jei kažkas neaišku, ar atrodo, kad neįvykdžiau ar šiaip įdomu :)
+
+Programos reikalavimų įvykdymas trumpai: 3), 4) ir 5).
+Apie testus: 6).
+Apie komentarus programoje: 7).
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+1) *** Saugumas ***
+Daugiausia darbo įdėjau į tai, kad atmintyje nebūtų slaptažodžio string pavidalu, todėl nekviečiau PasswordBox.Password,
+o tik PasswordBox.SecurePassword. TesonetService naudoja HttpClient.PostAsync() metodą, kuriam reikia perduoti HttpContent
+objektą. Todėl teko naudoti StreamContent klasę ir sukurti savo klasę StreamWithSecurePassword, kuri galėtų atiduoti
+turinio baitus, nesaugodama slaptažodžio string'u atmintyje. Aišku, reikėtų Tesonet servisą padėti ant HTTPS, bet čia jau aš
+nevaldau situacijos. Taip pat, turint laiko, galima būtų patikrinti source arba dokumentacijoje, ar HttpClient.PostAsync(),
+išsiųsdamas turinį, nepalieka tų baitų atmintyje.
+Daugiau apie StreamWithSecurePassword klasės veikimą žemiau 9) punkte.
+
+
+
+2) *** UI skirtumai ***
+Neieškojau tokio paties font'o, nes neparašėte koks ir neįdėjote, tai tikiuosi tada ne taip aktualu, kad atrodytų
+idealiai kaip pavyzdyje. IRL tikiuosi dizainer'is duotų ir font'us ir dydžius ir png ir t.t.
+LOGIN:
+Paleidus programą, skiriasi mygtuko spalva, nes jis disable'intas, kol username tuščias. Tam, kad matytųsi, jog yra watermark'ai,
+pradžioje fokusas nėra ant username lauko, nors production'e pridėčiau, kad iš karto būtų galima rinkti username. Patogumui
+dirbant su klaviatūra padariau, kad ENTER pereitų iš username lauko į sekantį. O kitur - ENTER paleidžia default mygtuką
+"Log In", jeigu toks matosi. Paleidus, galima atšaukti paspaudus ESC. Sėkmingai prisijungus, username ir password reikšmės
+panaikinamos.
+SERVER LIST:
+Negalėjau nepridėti mygtuko Refresh viršuje. Šiame lange, irgi galima be pelės išgyventi vaikščiojant su TAB.
+Sąrašą galima rūšiuoti, paspaudus ant atitinkamo header'io. Paspaudus tą patį, pagal kurį surūšiuota, pasikeičia kryptis.
+Paspaudus Refresh, rūšiavimo aprašymas kopijuojamas į naują sąrašą, todėl išlieka. UI elementuose nesimato rūšiavimo,
+nes nebuvo pradiniame Screen. Ir apskritai, iš akies, dažniausiai aišku čia, pagal ką surūšiuota.
+Nežinojau, ar čia sąrašas peržiūrai, ar kažką galima daryti su element'ais, tai šiuo metu elementų pasirinkimo galimybės nėra.
+
+2a) UI kalbų palaikymas.
+Tokio nėra, nes nebuvo net užuominų apie tai, nors IRL tikrai pridėčiau.
+
+
+
+3) *** MVVM, DI, IOC ***
+Naudojau iš Microsoft kilusį Prism (6.3).
+
+4) *** Logging ***
+Naudojau log4net, pasiekdamas per Prism, tam sukūriau PrismLog4NetProxy.
+
+5) *** UI neužblokavimas ***
+Pridėjau nedidelių ProgressBar'ų į abu UI, bei "Log In" mygtuką keičiu į "Cancel" mygtuką ir atgal.
+Vėl gi, programa mažytė, todėl daug dėmesio klasių ThreadSafe'iškumui neskyriau, nes visos komandos
+kviečiamos iš UI ir yra tik viena UI gija (Thread). Tai panaudojanu kelis Task'us su async ir await ir tiek.
+Turiu nemažai patirties su multithread'ingu įvairiuose duomenų sinchronizavimo projektuose,
+tačiau šiame projekte tam dėmesio ir laiko neskyriau, nes viskas, ko čia reikėjo, tai neužrakinti UI.
+Iš įpročio kelis lock'us idėjau, kelis nuorodų kopijavimo į lokalius kintamuosius, tačiau netikrinau įdėmiai,
+kad būtų visur, kur reikia.
+Jeigu reikėtų tas komandas ne tik iš UI kviesti, ar tą patį TesonetService naudoti multithread aplinkoje,
+tuomet reikėtų atitinkamai peržiūrėti kodą ir pritaikyti. Tačiau užduotis to nereikalavo :)
+
+
+
+6) *** Testavimas ***
+Proof of concept tikslu, testavimus kol kas parašiau tik reikalingiausioje vietoje - StreamWithSecurePassword klasei patikrinti.
+Svarbiausias testas, šiuo atveju, su normaliu slaptažodžiu bei slaptažodžiu su neleistinais JSON string simboliais (" ir \).
+Taip pat, patikrinau Read metodą su mažu, dideliu ir vidutiniu buferio dydžiu. Vienas testas proof of concept tikslu su UTF16,
+tačiau man nepavyko iškviesti Tesonet servisą, nurodžius charset. Kadangi tai nebuvo reikalinga, toliau nenagrinėjau, ar aš blogai
+užpildžiau, ar Jūs nepalaikote, pagalvojau, paklausiu vėliau :) Taip pat pridėjau testų su tuščiais bei neleistinais argumentais,
+bei storesniais UTF8 simboliais, bei, mano prielaida, neleistinais simboliais slaptažodyje.
+Dėl laiko stokos ir projekto dydžio, kitų klasių testų nerašiau, kol kas užteks :)
+
+
+
+7) *** Komentarai programoje ***
+Komentarus programoje vietomis rašiau ne visai tikroviškus, nes rašiau prie metodų, tai ten lyg ir turėtų būti parašyta KĄ metodas
+daro, o ne KAIP. Tačiau čia užduotis, kurią tikrinsite, tai vietomis parašyta ir KAIP.
+StreamWithSecurePassword klasėje tokių komentarų nerašiau, ten reikėtų parašyti aprašymą tiems, kas ją galbūt naudos dar kur nors,
+tai gal į atskirą DLL padėti ir pan. Čia jau ne šitos užduoties scope, tai palikau be komentarų, o veikimą aprašysiu čia.
+
+
+
+8) *** XAML ir stiliai ***
+Tik dviejų langų vaizdai, tarp kurių beveik nieko bendro, neleidžia suprasti, koks bus bendras vaizdas ir funkcionalumas vėliau.
+Žinant tai, galima būtų sutvarkyti stilius ir elementus, Sukurti resursų su x:Key, kad būtų galima nurodyti spalvas, dydžius ir t.t.,
+kuriuos galima naudoti kituose stiliuose, kad lengvai būtų galima redaguoti tam tikros rūšies spalvą per visą aplikaciją.
+Mėgstu kelti stiliaus xaml'ą dinamiškai ir stebėti to failo pasikeitimus. Tokiu atveju, paredagavus failą,
+iš karto ant veikiančios programos, matytųsi kaip atrodo ir galima būtų patogiai 'žaisti' su dizainu ir tobulinti.
+Prikurti įvairių skin'ų, kuriuos galima būtų pasirinkti veikiant programai on-the-fly ir t.t. Dėl laiko stokos viso šito
+nepadariau ir net nesutvarkiau dabartinių xaml'ų. Tiesiog pasiekiau, kad UI atrodytų panašiai kaip užduotyje ir šiek tiek
+patogumo vartotojui pridėjau, bet prieš tobulindamas bendrą struktūrą, norėčiau žinoti daugiau apie tai, kaip atrodys kiti
+langai, koks bus funkcionalumas, galų gale kam iš vis reikia dabartinių langų, ko norės vartotojas.
+Žinant visą tai galima tobulinti tiek xaml struktūrą, tiek patį UI ir patogumą vartotojui.
+O šioje užduotyje, dariau prielaidą, kad tikslas - panašus atrodymas, XAML valdymas, o ne stilių ir skinų skaidymas
+dviejų langų projekte :)
+
+*** Kiti naudoti NuGet ***
+Naudojau Newtonsoft.Json, kad escapinti UserName bei sukurti dynamic objektą iš gautų duomenų iš Tesonet serviso.
+
+
+9) *** StreamWithSecurePassword aprašymas ***
+Šios klasės užduotis yra tokia: mes jai paduodame turinio pradžią (prefix) iki tos vietos, kur turėtų būti įterptas slaptažodis,
+patį slaptažodį SecurePassword klasės pavidalu ir tolimesnį turinį po slaptažodžio iki galo (suffix). Taip pat paduodame Encoding,
+kuriuo versti tekstinį turinį į baitus. Ir paskutinis argumentas - kokius simbolius negalima siųsti tiesiai ir kaip juos escape'inti.
+Turi būti iš karto paruoštas byte'ais teisingu Encoding'u - efektyvumo tikslais. Pvz., mes siunčiame JSON string, tai negalime
+naudoti kabučių " ir backslash \, o juos reikia pakeisti į "" bei \".
+Verta paminėti, kad šita klasė šiuo metu skirta mažiems prefix'ams ir suffix'ams, kaip kad šioje programoje nedidelis prisijungimo
+JSON'as, nes ji konstruktoriuje juos iš karto paverčia į baitų masyvus. Todėl labai labai dideliems string'ams gal geriau patobulinti,
+kad verstų dalimis, kai kažkas kviečia metodą Read().
+Ši klasė, paveldėdama Stream'ą nepalaiko daugumos dalykų, o leidžia tik viena kryptimi skaityti su Read() metodu. Pačiame Read()
+metode kviečiams ReadInternal(), kuris tiesiog kopijuoja iš tam tikro masyvo į buferį, paduotą per Read() ir grąžina kiek nukopijavo.
+Tai bus arba tiek, kiek užprašė per Read() arba mažiau, jei mūsų tas tam tikras masyvas baigėsi. Todėl po skaitymo, jei gavome mažiau,
+tada pakeičiame statusą į sekantį (enum CurrentyReading { Prefix = 0, Password, Suffix }) ir kviečiame save rekursiškai. O switch'as
+pagal būseną pasirūpins, kad skaitytų iš teisingo masyvo. Prefix ir Suffix atveju, tai jau konstruktoriuje Encoding'o pagalba paversti
+masyvai. O tuomet, kai jau turime transliuoti patį slaptažodį, tai čia jau svarbiausia nelaikyti jo viso grynu tekstu ir netgi baitų
+masyvu. Taigi, iš SecurePassword Marshal.ReadInt16() pagalba perskaitome vieną char'ą į iš anksto paruoštą masyvą (ilgio 1), kad
+nesivoliotų atmintyje tie char'ai, o būtų tik viena vieta, kuri po panaudojimo būtų iš karto apnulinta ir kompiliatorius neoptimizuotų
+šio proceso. Taigi, trumpam ištraukę tą char'ą, Encoding pagalba paverčiame jį į baitų masyvą, bet lygiai taip pat - naudojame iš anksto
+paruoštą masyvą - klasės lauką (konstruktoriuje nustatomas jo maksimalus ilgis). Ir iš šio mini masyvo kopijuojame į paduotą buferį.
+Jeigu reikia, skaitome sekantį char'ą ir t.t. Jeigu užpildėme paduotą buferį nusiuntę tik dalį simbolio byte'ų, tai kito Read() metu
+pratęsime kopijavimą iš to vidino lauko masyvo ir po to tęsime toliau char'ų skaitymą po vieną.
+Tokiu būdu, bet kuriuo momentu, padarius atminties kopiją, joje slaptažodžio pas mus nerasime. Rasime nebent tame buffer'yje, kurį paduoda
+kažkas, bet be šito neišsisuksi.
+
+
+
+10) *** Solution skirstymas į projektus ***
+Šiam mažiam Solution neskirsčiau į projektus, bet IRL abstrakčią TesonetServiceAbstract galima būtų į atskirą dll iškelti, kaip ir
+jos implementaciją TesonetService. Taip pat, tam tikrus patogius dalykėlius galima iškelti į dll'us, kad galima būtų panaudoti ir
+patobulinti kitiems įmonės projektams (tarkim XamlHelpers, StreamWithSecurePassword, PrismLog4NetProxy, StaticHelpers).

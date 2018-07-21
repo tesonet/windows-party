@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="WinPartyArs.Views.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             xmlns:wh="clr-namespace:WinPartyArs.XamlHelpers"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             PreviewKeyDown="LoginControl_PreviewKeyDown">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        <wh:BooleanToHiddenVisibilityConverter x:Key="BoolToVisHidden" />
+        <wh:BooleanToVisibilityInvertedConverter x:Key="BoolToVisInv" />
+        <!--<wh:BooleanInvertedConverter x:Key="BoolInv" />-->
+    </UserControl.Resources>
+    <UserControl.Background>
+        <ImageBrush ImageSource="/WinPartyArs;component/Images/login-background.png" Stretch="UniformToFill"/>
+    </UserControl.Background>
+    
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="370">
+        <Image Source="/WinPartyArs;component/Images/logo.png" Width="250" Margin="0,0,0,50" />
+        <TextBox Text="{Binding Username,UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="Username_PreviewKeyDown"
+                 wh:PartyTextBox.Image="/WinPartyArs;component/Images/username-icon.png" wh:PartyTextBox.Hint="Username" />
+        <PasswordBox Name="Password" wh:PartyTextBox.Image="/WinPartyArs;component/Images/password-icon.png" wh:PartyTextBox.Hint="Password" />
+        <Button Content="Log In" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Password}" IsDefault="True"
+                Visibility="{Binding IsBusy,Converter={StaticResource BoolToVisInv}}" IsVisibleChanged="FocusedButtonBecameInvisibleHandler" />
+        <Button Content="Cancel" Command="{Binding CancelLoginCommand}" Visibility="{Binding IsBusy,Converter={StaticResource BoolToVis}}"
+                IsVisibleChanged="FocusedButtonBecameInvisibleHandler" />
+        <ProgressBar Visibility="{Binding IsBusy,Converter={StaticResource BoolToVisHidden}}" IsIndeterminate="True" />
+        <TextBlock Text="{Binding ErrorMsg}" Style="{DynamicResource ErrorMsgTextBlock}" />
+    </StackPanel>
+</UserControl>

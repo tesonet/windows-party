@@ -1,0 +1,182 @@
+﻿<Window x:Class="WinPartyArs.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:wh="clr-namespace:WinPartyArs.XamlHelpers"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Focusable="False"
+        Title="Tesonet Windows Party"
+        Width="1475" Height="820"
+        FontSize="18"
+        FontFamily="Helvetica">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="0,10" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Height" Value="55" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border Background="{TemplateBinding Background}" x:Name="Bd" BorderBrush="{x:Null}"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                            <DockPanel>
+                                <Image DockPanel.Dock="Left" Stretch="None" Margin="20,0,15,0"
+                                       Source="{Binding (wh:PartyTextBox.Image), RelativeSource={RelativeSource AncestorType={x:Type TextBox}}}" />
+                                <Grid>
+                                    <TextBlock x:Name="Tb" Foreground="#979797" FontSize="17" Visibility="Collapsed" VerticalAlignment="Center"
+                                               Text="{Binding (wh:PartyTextBox.Hint), RelativeSource={RelativeSource AncestorType={x:Type TextBox}}}"/>
+                                    <ScrollViewer x:Name="PART_ContentHost" />
+                                </Grid>
+                            </DockPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter TargetName="Tb" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter TargetName="Tb" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="Tb" Property="Visibility" Value="Collapsed" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="Margin" Value="0,10" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Height" Value="55" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border Background="{TemplateBinding Background}" x:Name="Bd" BorderBrush="{x:Null}"
+                                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                            <DockPanel>
+                                <Image DockPanel.Dock="Left" Stretch="None" Margin="20,0,15,0"
+                                       Source="{Binding (wh:PartyTextBox.Image), RelativeSource={RelativeSource AncestorType={x:Type PasswordBox}}}" />
+                                <Grid>
+                                    <TextBlock x:Name="Tb" Foreground="#979797" FontSize="17" Visibility="Collapsed" VerticalAlignment="Center"
+                                               Text="{Binding (wh:PartyTextBox.Hint), RelativeSource={RelativeSource AncestorType={x:Type PasswordBox}}}"/>
+                                    <ScrollViewer x:Name="PART_ContentHost" />
+                                </Grid>
+                            </DockPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="wh:PartyTextBox.PasswordHintVisible" Value="True">
+                                <Setter TargetName="Tb" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="Tb" Property="Visibility" Value="Collapsed" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="0,10" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Height" Value="55" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="#9ED532" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Border" TextBlock.Foreground="{TemplateBinding Foreground}" 
+                                Background="{TemplateBinding Background}" BorderBrush="{x:Null}" CornerRadius="5">
+                            <Grid>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                                <Rectangle x:Name="DisabledOverlay" Fill="White" Opacity="0.4" Visibility="Collapsed" />
+                                <Rectangle x:Name="PressedOverlay" Fill="Black" Opacity="0.1" Visibility="Collapsed" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="DisabledOverlay" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="PressedOverlay" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ErrorMsgTextBlock" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Foreground" Value="#FFFF5555" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style x:Key="AlmostInvisibleScrollViewer" TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <ScrollContentPresenter Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                            <ScrollBar Name="PART_VerticalScrollBar" Grid.Column="1" Opacity="0.3"  Value="{TemplateBinding VerticalOffset}"
+                                       Maximum="{TemplateBinding ScrollableHeight}" ViewportSize="{TemplateBinding ViewportHeight}"
+                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Width="24">
+                                <ScrollBar.Template>
+                                    <ControlTemplate>
+                                        <Track Name="PART_Track" IsDirectionReversed="true">
+                                            <Track.DecreaseRepeatButton>
+                                                <RepeatButton Command="ScrollBar.PageUpCommand" BorderThickness="0">
+                                                    <RepeatButton.Background>
+                                                        <SolidColorBrush Opacity="0" />
+                                                    </RepeatButton.Background>
+                                                </RepeatButton>
+                                            </Track.DecreaseRepeatButton>
+                                            <Track.Thumb>
+                                                <Thumb>
+                                                    <Thumb.Template>
+                                                        <ControlTemplate>
+                                                            <Border BorderThickness="0" Padding="9">
+                                                                <Border.Background>
+                                                                    <SolidColorBrush Opacity="0" />
+                                                                </Border.Background>
+                                                                <Border BorderThickness="0" CornerRadius="2" Background="Black" />
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Thumb.Template>
+                                                </Thumb>
+                                            </Track.Thumb>
+                                            <Track.IncreaseRepeatButton>
+                                                <RepeatButton Command="ScrollBar.PageDownCommand" BorderThickness="0">
+                                                    <RepeatButton.Background>
+                                                        <SolidColorBrush Opacity="0" />
+                                                    </RepeatButton.Background>
+                                                </RepeatButton>
+                                            </Track.IncreaseRepeatButton>
+                                        </Track>
+                                    </ControlTemplate>
+                                </ScrollBar.Template>
+                            </ScrollBar>
+                            <ScrollBar Name="PART_HorizontalScrollBar" Grid.Row="1" Opacity="0.5" Orientation="Horizontal"
+                                       Value="{TemplateBinding HorizontalOffset}" Maximum="{TemplateBinding ScrollableWidth}"
+                                       ViewportSize="{TemplateBinding ViewportWidth}"
+                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <ContentControl prism:RegionManager.RegionName="{Binding MainRegionName}" Focusable="False" />
+</Window>
