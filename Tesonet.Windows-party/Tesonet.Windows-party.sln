@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet.Windows-party", "Tesonet.Windows-party.csproj", "{6B6B792D-5ABB-4812-ACA3-96D7071CDF03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet.Windows-party.Tests", "..\Tesonet.Windows-party.Tests\Tesonet.Windows-party.Tests.csproj", "{5F6A3B4D-98F2-482F-9763-B95C5F14E8C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B6B792D-5ABB-4812-ACA3-96D7071CDF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6B792D-5ABB-4812-ACA3-96D7071CDF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6B792D-5ABB-4812-ACA3-96D7071CDF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6B792D-5ABB-4812-ACA3-96D7071CDF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6A3B4D-98F2-482F-9763-B95C5F14E8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6A3B4D-98F2-482F-9763-B95C5F14E8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6A3B4D-98F2-482F-9763-B95C5F14E8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6A3B4D-98F2-482F-9763-B95C5F14E8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Tesonet.Windows-party/bin/Debug
+/Tesonet.Windows-party/.vs/Tesonet.Windows-party/v14
+/Tesonet.Windows-party/obj/Debug
+/Tesonet.Windows-party/packages
+/Tesonet.Windows-party.Tests/bin/Debug
+/Tesonet.Windows-party.Tests/obj/Debug
