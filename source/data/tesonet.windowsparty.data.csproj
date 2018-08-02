@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94EC90B4-7BBF-41E2-B49B-DACBEE21FE90}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tesonet.windowsparty.data</RootNamespace>
+    <AssemblyName>tesonet.windowsparty.data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ensure.That, Version=8.0.0.86, Culture=neutral, PublicKeyToken=d7cf9132176ba30b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ensure.That.8.0.0\lib\net451\Ensure.That.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Servers\LoggingServerQueryHandler.cs" />
+    <Compile Include="Servers\ServerQuery.cs" />
+    <Compile Include="Servers\ServerQueryException.cs" />
+    <Compile Include="Servers\ServerQueryHandler.cs" />
+    <Compile Include="StartedFinishedLoggingQueryHandler.cs" />
+    <Compile Include="Tokens\CachingTokenQueryHandler.cs" />
+    <Compile Include="Tokens\TokenQueryException.cs" />
+    <Compile Include="IQuery.cs" />
+    <Compile Include="IQueryHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tokens\LoggingTokenQueryHandler.cs" />
+    <Compile Include="Tokens\TokenQuery.cs" />
+    <Compile Include="Tokens\TokenQueryHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\caching\tesonet.windowsparty.caching.csproj">
+      <Project>{865197dd-8833-421e-9bd7-6214061e6180}</Project>
+      <Name>tesonet.windowsparty.caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\contracts\tesonet.windowsparty.contracts.csproj">
+      <Project>{ddb72d46-340d-41a2-a44f-bd6cbae5f6bf}</Project>
+      <Name>tesonet.windowsparty.contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\http\tesonet.windowsparty.http.csproj">
+      <Project>{8c9230c2-3665-49f4-b296-cfadf03cb62c}</Project>
+      <Name>tesonet.windowsparty.http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\logging\tesonet.windowsparty.logging.csproj">
+      <Project>{2088e16c-d1d8-4f86-a66d-fa0a452fbd6a}</Project>
+      <Name>tesonet.windowsparty.logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

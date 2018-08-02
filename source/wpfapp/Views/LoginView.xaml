@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="tesonet.windowsparty.wpfapp.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:tesonet.windowsparty.wpfapp.Converters" 
+             mc:Ignorable="d" Height="612" Width="865">
+    <UserControl.Resources>
+        <converters:ErrorMessageVisibilityConverter x:Key="ErrorMessageVisibility" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/tesonet.windowsparty.wpfapp;component/Assets/log-in-background.png"/>
+        </Grid.Background>
+        <Grid Height="200" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="175,166,175,132">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBox x:Name="TextBoxUsername" Margin="5" Text="{Binding Username}" FontSize="14" MinHeight="40" VerticalAlignment="Center"></TextBox>
+                <!--<StackPanel Margin="25,0,0,0" Orientation="Horizontal" Visibility="{Binding IsUsernamePlaceholderVisible}">
+                    <Image IsHitTestVisible="False" x:Name="ImageUsername" Source="../Assets/user.png" Width="24" Height="24" HorizontalAlignment="Left"></Image>
+                    <TextBlock IsHitTestVisible="False" x:Name="TextBlockUsername" Text="Username" FontSize="14" Opacity="0.4" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>-->
+            </Grid>
+            <Grid Grid.Row="1">
+                <PasswordBox x:Name="PasswordBoxPass" Margin="5" FontSize="14" MinHeight="40" VerticalAlignment="Center"></PasswordBox>
+                <!--<StackPanel Margin="25,0,0,0" Orientation="Horizontal" Visibility="{Binding IsPasswordPlaceholderVisible}">
+                    <Image IsHitTestVisible="False" x:Name="ImagePassword" Source="../Assets/password.png" Width="24" Height="24" HorizontalAlignment="Left"></Image>
+                    <TextBlock IsHitTestVisible="False" x:Name="TextBlockPassword" Text="Password" FontSize="14" Opacity="0.4" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>-->
+            </Grid>
+            <Button Margin="5" Grid.Row="2" Command="{Binding LoginCommand}" Content="Log In" Background="#FF86B300" Foreground="White" FontSize="14" Cursor="Hand" MinHeight="40"></Button>
+            <TextBox Grid.Row="3" Text="{Binding ErrorMessage}" Visibility="{Binding ErrorMessage, Converter={StaticResource ErrorMessageVisibility}}" FontSize="14" Foreground="#FFAE2222" Background="#33FFFFFF"/>
+        </Grid>
+    </Grid>
+</UserControl>

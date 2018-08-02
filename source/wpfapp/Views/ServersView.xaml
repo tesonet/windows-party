@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="tesonet.windowsparty.wpfapp.Views.ServersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Background="White" Grid.Row="0" >
+            <Image Margin="5" VerticalAlignment="Center" Height="50" Source="../Assets/logo.png"></Image>
+            <Button Margin="5" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Right" Command="{Binding LogoutCommand}">
+                <Image Height="25" Source="../Assets/log-out.png" Cursor="Hand"></Image>
+            </Button>
+        </DockPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DataGrid Grid.Column="0" ItemsSource="{Binding Servers}" FontSize="10" ColumnHeaderHeight="30" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF686363" VerticalGridLinesBrush="{x:Null}" HeadersVisibility="Column" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="SERVER" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="DISTANCE" Width="75" Binding="{Binding Distance}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Image Grid.Column="1" Source="../Assets/net-developer-task.png"></Image>
+        </Grid>
+    </Grid>
+</UserControl>
