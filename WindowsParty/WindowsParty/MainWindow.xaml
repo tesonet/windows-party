@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         FontFamily="{StaticResource Font.Roboto}">
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Vertical">
+        <Button Click="btnLogin_OnClick">LogIn</Button>
+        <Button Click="btnServers_OnClick">Servers</Button>
+    </StackPanel>
 </Window>

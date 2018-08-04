@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindowsParty.ApiServices;
+using WindowsParty.ApiServices.Models;
 
 namespace WindowsParty
 {
@@ -20,9 +22,38 @@ namespace WindowsParty
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IPlaygroundService _service;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            _service = new PlaygroundService();
+        }
+
+        private void btnLogin_OnClick(object sender, RoutedEventArgs e)
+        {
+            var model = new TokenRequest
+            {
+                Username = "",
+                Password = ""
+            };
+            var t = _service.Authorize(model);
+            t.ContinueWith(_ =>
+            {
+
+            });
+        }
+
+        private void btnServers_OnClick(object sender, RoutedEventArgs e)
+        {
+            var token = "";
+
+            var t = _service.Servers(token);
+            t.ContinueWith(_ =>
+            {
+
+            });
         }
     }
 }
