@@ -14,7 +14,7 @@ namespace WindowsParty.ApiServices
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        Task<TokenResponse> Authorize(TokenRequest request);
+        Task<AuthResponse> Authorize(AuthRequest request);
 
         /// <summary>
         /// Gets all servers
@@ -29,7 +29,7 @@ namespace WindowsParty.ApiServices
         private static Uri _base = new Uri("http://playground.tesonet.lt/v1");
 
         /// <inheritdoc />
-        public async Task<TokenResponse> Authorize(TokenRequest request)
+        public async Task<AuthResponse> Authorize(AuthRequest request)
         {
             if (request == null)
                 throw new ArgumentNullException(nameof(request));
@@ -48,7 +48,7 @@ namespace WindowsParty.ApiServices
 
                 var rv = await res.Content.ReadAsStringAsync();
 
-                return DeserializeObject<TokenResponse>(rv);
+                return DeserializeObject<AuthResponse>(rv);
             }
         }
 

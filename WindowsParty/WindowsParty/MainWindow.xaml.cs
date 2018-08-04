@@ -33,7 +33,7 @@ namespace WindowsParty
 
         private void btnLogin_OnClick(object sender, RoutedEventArgs e)
         {
-            var model = new TokenRequest
+            var model = new AuthRequest
             {
                 Username = "",
                 Password = ""

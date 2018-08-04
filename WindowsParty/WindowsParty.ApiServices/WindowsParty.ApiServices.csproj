@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AuthRequest.cs" />
+    <Compile Include="Models\AuthResponse.cs" />
     <Compile Include="Models\Server.cs" />
     <Compile Include="PlaygroundService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
