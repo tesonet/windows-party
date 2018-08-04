@@ -90,6 +90,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -118,6 +126,28 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Roboto\LICENSE.txt" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-Black.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-BlackItalic.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-Bold.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-BoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-Italic.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-Light.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-LightItalic.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-Medium.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-MediumItalic.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-Regular.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-Thin.ttf" />
+    <Resource Include="Resources\Fonts\Roboto\Roboto-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ico-lock.png" />
+    <Resource Include="Resources\Images\ico-username.png" />
+    <Resource Include="Resources\Images\LogIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logotype-testio..png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

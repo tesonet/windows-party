@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ice="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Icons.Password" UriSource="/Resources/Images/ico-lock.png" />
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Icons.User" UriSource="/Resources/Images/ico-username.png" />
+
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Images.Logo" UriSource="/Resources/Images/logotype-testio..png" />
+
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Images.Login" UriSource="/Resources/Images/LogIn.png" />
+
+</ResourceDictionary>
