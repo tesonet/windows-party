@@ -185,13 +185,22 @@
     <Resource Include="Resources\Images\LogIn.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\logotype-testio..png" />
+    <Resource Include="Resources\Images\logotype-testio.light.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WindowsParty.ApiServices\WindowsParty.ApiServices.csproj">
       <Project>{5c3cc3eb-430b-4784-86c6-0e2fd66fc063}</Project>
       <Name>WindowsParty.ApiServices</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ico-logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logotype-testio.dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ServerList.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

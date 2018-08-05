@@ -4,9 +4,12 @@
 
     <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Icons.Password" UriSource="/Resources/Images/ico-lock.png" />
     <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Icons.User" UriSource="/Resources/Images/ico-username.png" />
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Icons.Logout" UriSource="/Resources/Images/ico-logout.png" />
 
-    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Images.Logo" UriSource="/Resources/Images/logotype-testio..png" />
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Images.Logo.Light" UriSource="/Resources/Images/logotype-testio.light.png" />
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Images.Logo.Dark" UriSource="/Resources/Images/logotype-testio.dark.png" />
 
     <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Images.Login" UriSource="/Resources/Images/LogIn.png" />
+    <BitmapImage ice:Freeze="True" x:Shared="False" x:Key="Images.ServerList" UriSource="/Resources/Images/ServerList.png" />
 
 </ResourceDictionary>

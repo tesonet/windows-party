@@ -7,7 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:vm="clr-namespace:WindowsParty.ViewModels"
 
-    Background="{StaticResource Brushes.Login.Background}"
+    Background="{StaticResource Brushes.Background}"
     Focusable="True"
     FocusVisualStyle="{x:Null}"
 
@@ -17,7 +17,7 @@
     d:DesignWidth="1460">
     <UserControl.Resources>
         <ResourceDictionary>
-            <Style x:Key="Button.Login" TargetType="Button">
+            <Style x:Key="Button.Login" TargetType="Button" BasedOn="{StaticResource TemplatedButton}">
                 <Setter Property="Background" Value="#9fd533" />
                 <Setter Property="FontSize" Value="16" />
                 <Setter Property="FontFamily" Value="{StaticResource Font.Roboto}" />
@@ -68,7 +68,7 @@
                    Stretch="Fill"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Source="{StaticResource Images.Logo}"
+                   Source="{StaticResource Images.Logo.Light}"
                    Height="64"
                    Width="246"
                    Margin="0,0,0,70"/>

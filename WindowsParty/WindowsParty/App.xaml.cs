@@ -4,6 +4,7 @@ using WindowsParty.Utils;
 using WindowsParty.ViewModels;
 using GalaSoft.MvvmLight.Messaging;
 using Unity;
+using Unity.Resolution;
 
 namespace WindowsParty
 {
@@ -36,7 +37,7 @@ namespace WindowsParty
             IViewModel vm;
 
             if (msg.Authorized)
-                vm = Configuration.Container.Resolve<IServerListViewModel>();
+                vm = Configuration.Container.Resolve<IServerListViewModel>(new ParameterOverride("token", _token));
             else
                 vm = Configuration.Container.Resolve<ILoginViewModel>();
 
