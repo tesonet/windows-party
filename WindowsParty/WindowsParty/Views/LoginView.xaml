@@ -5,10 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:vm="clr-namespace:WindowsParty.ViewModels"
 
     Background="{StaticResource Brushes.Login.Background}"
+    Focusable="True"
+    FocusVisualStyle="{x:Null}"
 
     mc:Ignorable="d" 
+    d:DataContext="{d:DesignInstance vm:LoginViewModel}"
     d:DesignHeight="780" 
     d:DesignWidth="1460">
     <UserControl.Resources>
@@ -69,11 +73,12 @@
                    Width="246"
                    Margin="0,0,0,70"/>
 
-            <TextBox Grid.Row="1" x:Name="txtUsername" Margin="0,0,0,20" />
-            <TextBox Grid.Row="2" x:Name="txtPassword" Margin="0,0,0,20" />
+            <TextBox Grid.Row="1" x:Name="txtUsername" Margin="0,0,0,20" Text="{Binding Username, Mode=TwoWay}" />
+            <PasswordBox Grid.Row="2" x:Name="txtPassword" Margin="0,0,0,20" Password="partyanimal" />
 
             <Button Grid.Row="3"
                     Style="{StaticResource Button.Login}"
+                    Click="btnLogin_OnClick"
                     Content="Log In" />
         </Grid>
     </Grid>

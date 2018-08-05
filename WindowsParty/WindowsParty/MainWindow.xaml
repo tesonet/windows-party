@@ -1,16 +1,20 @@
-﻿<Window x:Class="WindowsParty.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WindowsParty"
-        xmlns:views="clr-namespace:WindowsParty.Views"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="780" Width="1460"
-        FontFamily="{StaticResource Font.Roboto}">
-    <StackPanel Orientation="Vertical">
-        <views:LoginView />
-        <Button Click="btnLogin_OnClick">LogIn</Button>
-        <Button Click="btnServers_OnClick">Servers</Button>
-    </StackPanel>
+﻿<Window 
+    x:Class="WindowsParty.MainWindow"
+    x:Name="window"
+
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utils="clr-namespace:WindowsParty.Utils"
+    
+    Title="MainWindow" 
+    Height="780" 
+    Width="1460"
+    FontFamily="{StaticResource Font.Roboto}"
+
+    mc:Ignorable="d">
+    <ContentControl>
+        <ContentPresenter ContentTemplateSelector="{x:Static utils:ViewForAttribute.DataTemplateSelector}" Content="{Binding DataContext, ElementName=window}" />
+    </ContentControl>
 </Window>
