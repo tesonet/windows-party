@@ -21,7 +21,7 @@ namespace WindowsParty.ApiServices
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        Task<Server[]> Servers(string token);
+        Task<ServersResponse> Servers(string token);
     }
 
     public class PlaygroundService : IPlaygroundService
@@ -53,7 +53,7 @@ namespace WindowsParty.ApiServices
         }
 
         /// <inheritdoc />
-        public async Task<Server[]> Servers(string token)
+        public async Task<ServersResponse> Servers(string token)
         {
             if (string.IsNullOrWhiteSpace(token))
                 throw new ArgumentNullException(nameof(token));
@@ -68,7 +68,17 @@ namespace WindowsParty.ApiServices
                     throw new Exception("Failed to get servers. Status code: " + res.StatusCode);
 
                 var rv = await res.Content.ReadAsStringAsync();
-                return DeserializeObject<Server[]>(rv);
+
+                try
+                {
+                    var servers = DeserializeObject<Server[]>(rv);
+                    return new ServersResponse() { Servers = servers };
+                }
+                catch (Exception e)
+                {
+                    var r = DeserializeObject<ServersResponse>(rv);
+                    return r;
+                }
             }
         }
 

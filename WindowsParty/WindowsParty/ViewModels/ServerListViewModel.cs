@@ -55,9 +55,7 @@ namespace WindowsParty.ViewModels
         private void LoadAsync()
         {
             var task = _service.Servers(Token);
-            task.ContinueWith(t => { Servers = t.Result; }, TaskContinuationOptions.OnlyOnRanToCompletion);
+            task.ContinueWith(t => { Servers = t.Result.Servers; }, TaskContinuationOptions.OnlyOnRanToCompletion);
         }
-
-        /// <inheritdoc />
     }
 }

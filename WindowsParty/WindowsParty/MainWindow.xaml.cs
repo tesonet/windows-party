@@ -30,30 +30,5 @@ namespace WindowsParty
 
             _service = new PlaygroundService();
         }
-
-        private void btnLogin_OnClick(object sender, RoutedEventArgs e)
-        {
-            var model = new AuthRequest
-            {
-                Username = "",
-                Password = ""
-            };
-            var t = _service.Authorize(model);
-            t.ContinueWith(_ =>
-            {
-
-            });
-        }
-
-        private void btnServers_OnClick(object sender, RoutedEventArgs e)
-        {
-            var token = "";
-
-            var t = _service.Servers(token);
-            t.ContinueWith(_ =>
-            {
-
-            });
-        }
     }
 }

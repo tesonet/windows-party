@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using WindowsParty.Utils;
 using WindowsParty.ViewModels;
 
@@ -22,4 +23,5 @@ namespace WindowsParty.Views
                 vm.AuthorizeCommand.Execute(txtPassword.Password);
         }
     }
+
 }
