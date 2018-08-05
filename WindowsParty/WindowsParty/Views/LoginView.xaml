@@ -73,8 +73,24 @@
                    Width="246"
                    Margin="0,0,0,70"/>
 
-            <TextBox Grid.Row="1" x:Name="txtUsername" Margin="0,0,0,20" Text="{Binding Username, Mode=TwoWay}" />
-            <PasswordBox Grid.Row="2" x:Name="txtPassword" Margin="0,0,0,20" Password="partyanimal" />
+            <TextBox Grid.Row="1" x:Name="txtUsername" 
+                     Text="{Binding Username, Mode=TwoWay}" 
+                     Margin="0,0,0,20" 
+                     Height="56"
+                     Padding="40,20">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <PasswordBox Grid.Row="2" x:Name="txtPassword" Margin="0,0,0,20" Password="partyanimal" Height="56">
+                <PasswordBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </PasswordBox.Resources>
+            </PasswordBox>
 
             <Button Grid.Row="3"
                     Style="{StaticResource Button.Login}"

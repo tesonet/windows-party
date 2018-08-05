@@ -5,6 +5,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <SolidColorBrush x:Key="Brushes.Background" Color="#0b0f27" />
+    <SolidColorBrush x:Key="Brushes.ScrollBar" Color="#FFBFBFBF" />
 
     <FontFamily x:Key="Font.Roboto">pack://application:,,,/Resources/Fonts/Roboto/#Roboto</FontFamily>
 
@@ -26,6 +27,150 @@
                                           RecognizesAccessKey="True"
                         />
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlock.Server.base">
+        <Setter Property="FontFamily" Value="{StaticResource Font.Roboto}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="#666666" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlock.Server.Name" BasedOn="{StaticResource TextBlock.Server.base}">
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+    <Style TargetType="TextBlock" x:Key="TextBlock.Server.Distance" BasedOn="{StaticResource TextBlock.Server.base}">
+        <Setter Property="TextAlignment" Value="Right" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style x:Key="Thumb.base" TargetType="Thumb">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="Focusable" Value="false"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border
+                        CornerRadius="5"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Thumb.Vertical" TargetType="Thumb" BasedOn="{StaticResource Thumb.base}">
+        <Setter Property="Width" Value="6" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width" To="12" Duration="0:00:00.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width"  To="6" Duration="0:00:00.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="Thumb.Horizontal" TargetType="Thumb" BasedOn="{StaticResource Thumb.base}">
+        <Setter Property="Height" Value="6" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" To="12" Duration="0:00:00.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height"  To="6" Duration="0:00:00.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate TargetType="{x:Type ScrollBar}" x:Key="ScrollBar.Vertical">
+        <Grid>
+            <Track Name="PART_Track" IsDirectionReversed="true">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Visibility="Collapsed" Command="ScrollBar.PageUpCommand" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb
+                        Style="{StaticResource Thumb.Vertical}"
+                        Margin="1,0,1,0"
+                        Background="{StaticResource Brushes.ScrollBar}"
+                        BorderBrush="{StaticResource Brushes.ScrollBar}"/>
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Visibility="Collapsed" Command="ScrollBar.PageDownCommand" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate TargetType="{x:Type ScrollBar}" x:Key="ScrollBar.Horizontal">
+        <Grid>
+            <Track Name="PART_Track" IsDirectionReversed="False">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Visibility="Collapsed" Command="ScrollBar.PageLeftCommand" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb
+                        Style="{StaticResource Thumb.Horizontal}"
+                        Margin="0,1,0,1"
+                        Background="{StaticResource Brushes.ScrollBar}"
+                        BorderBrush="{StaticResource Brushes.ScrollBar}" />
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Visibility="Collapsed" Command="ScrollBar.PageRightCommand" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="ScrollViewer" x:Key="ScrollViewer.ServerList">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollViewer">
+                    <Grid>
+                        <ScrollContentPresenter />
+
+                        <ScrollBar HorizontalAlignment="Right" 
+                                   Name="PART_VerticalScrollBar"
+                                   Margin="5"
+                                   Value="{TemplateBinding VerticalOffset}"
+                                   Visibility="{TemplateBinding VerticalScrollBarVisibility}"
+                                   ViewportSize="{TemplateBinding ViewportHeight}"
+                                   Maximum="{TemplateBinding ScrollableHeight}"
+                                   Template="{StaticResource ScrollBar.Vertical}"/>
+
+                        <ScrollBar VerticalAlignment="Bottom" 
+                                   Name="PART_HorizontalScrollBar"
+                                   Margin="5"
+                                   Value="{TemplateBinding HorizontalOffset}"
+                                   Visibility="{TemplateBinding HorizontalScrollBarVisibility}"
+                                   ViewportSize="{TemplateBinding ViewportWidth}"
+                                   Maximum="{TemplateBinding ScrollableWidth}"
+                                   Template="{StaticResource ScrollBar.Horizontal}"/>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -104,6 +104,9 @@
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ServerItemView.xaml.cs">
+      <DependentUpon>ServerItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ServerListView.xaml.cs">
       <DependentUpon>ServerListView.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServerItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
