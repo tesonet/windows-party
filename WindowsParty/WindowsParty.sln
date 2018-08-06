@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsParty", "WindowsParty\WindowsParty.csproj", "{51A51903-F7C8-429A-86EA-1C9173BF5C0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsParty.ApiServices", "WindowsParty.ApiServices\WindowsParty.ApiServices.csproj", "{5C3CC3EB-430B-4784-86C6-0E2FD66FC063}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51A51903-F7C8-429A-86EA-1C9173BF5C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A51903-F7C8-429A-86EA-1C9173BF5C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A51903-F7C8-429A-86EA-1C9173BF5C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A51903-F7C8-429A-86EA-1C9173BF5C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3CC3EB-430B-4784-86C6-0E2FD66FC063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3CC3EB-430B-4784-86C6-0E2FD66FC063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3CC3EB-430B-4784-86C6-0E2FD66FC063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3CC3EB-430B-4784-86C6-0E2FD66FC063}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD67D3CB-69C6-4FAD-877B-A308AB866DA2}
+	EndGlobalSection
+EndGlobal
