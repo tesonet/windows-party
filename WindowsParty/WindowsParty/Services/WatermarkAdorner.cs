@@ -32,10 +32,12 @@ namespace WindowsParty.Services
         {
             IsHitTestVisible = false;
 
-            contentPresenter = new ContentPresenter();
-            contentPresenter.Content = watermark;
-            contentPresenter.Opacity = 0.5;
-            contentPresenter.Margin = new Thickness(Control.Margin.Left + Control.Padding.Left + Control.BorderThickness.Left, Control.Margin.Top + Control.Padding.Top + +Control.BorderThickness.Top, 0, 0);
+            contentPresenter = new ContentPresenter
+            {
+                Content = watermark,
+                Opacity = 1,
+                Margin = new Thickness(Control.Margin.Left + Control.Padding.Left + Control.BorderThickness.Left, Control.Margin.Top + Control.Padding.Top + +Control.BorderThickness.Top, 0, 0)
+            };
 
             if (Control is ItemsControl && !(Control is ComboBox))
             {
