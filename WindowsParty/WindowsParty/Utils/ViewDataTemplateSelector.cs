@@ -7,6 +7,9 @@ namespace WindowsParty.Utils
     /// <summary>
     /// Data template selector for selecting best matching registered view with <see cref="ViewForAttribute"/> attribute.
     /// </summary>
+    /// <remarks>
+    /// Copied from another project together with <see cref="ViewForAttribute"/>
+    /// </remarks>
     public class ViewDataTemplateSelector : DataTemplateSelector
     {
         public override DataTemplate SelectTemplate(object item, DependencyObject container)

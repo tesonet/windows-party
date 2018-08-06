@@ -38,7 +38,7 @@ namespace WindowsParty.ApiServices
             {
                 c.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var req = Newtonsoft.Json.JsonConvert.SerializeObject(request);
+                var req = JsonConvert.SerializeObject(request);
                 var content = new StringContent(req);
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 var res = await c.PostAsync($"{_base}/tokens", content);

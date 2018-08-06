@@ -6,6 +6,9 @@ using WindowsParty.Helpers;
 
 namespace WindowsParty.Utils
 {
+    /// <remarks>
+    /// Copied from another project together with <see cref="ViewDataTemplateSelector"/>
+    /// </remarks>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
     public class ViewForAttribute : Attribute
     {
@@ -38,7 +41,6 @@ namespace WindowsParty.Utils
 
         #region Properties
 
-        //TODO: Review if this static property is needed
         /// <summary>
         /// Default data template selector for views which uses <see cref="ViewForAttribute"/> attribute.
         /// </summary>
@@ -143,20 +145,6 @@ namespace WindowsParty.Utils
             }
 
             return null;
-        }
-
-        /// <summary>
-        /// Gets best matching registered view for speficified model object.
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        public static Type GetBestMatchingViewType(object model)
-        {
-            if (model == null)
-                throw new ArgumentNullException(nameof(model));
-
-            var type = model as Type;
-            return GetBestMatchingViewType(type ?? model.GetType());
         }
     }
 }
