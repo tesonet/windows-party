@@ -96,6 +96,8 @@
     <Compile Include="Helpers\AssemblyHelpers.cs" />
     <Compile Include="Helpers\TypeHelpers.cs" />
     <Compile Include="Messages\AuthorizationMessage.cs" />
+    <Compile Include="Services\WatermarkAdorner.cs" />
+    <Compile Include="Services\WatermarkService.cs" />
     <Compile Include="Utils\ViewDataTemplateSelector.cs" />
     <Compile Include="Utils\ViewForAttribute.cs" />
     <Compile Include="ViewModels\ServerListViewModel.cs" />
@@ -208,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\ServerList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

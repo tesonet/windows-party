@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:vm="clr-namespace:WindowsParty.ViewModels"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:services="clr-namespace:WindowsParty.Services"
 
     Background="{StaticResource Brushes.Background}"
     Focusable="True"
@@ -87,6 +88,12 @@
                         <Setter Property="CornerRadius" Value="5"/>
                     </Style>
                 </TextBox.Resources>
+                <services:WatermarkService.Watermark>
+                    <TextBlock Text="Username" 
+                               FontFamily="{StaticResource Font.Roboto}"
+                               FontSize="16" 
+                               Foreground="#FFB3B3B3"/>
+                </services:WatermarkService.Watermark>
             </TextBox>
             <Image Grid.Row="1"
                    Source="{StaticResource Icons.User}"
@@ -95,47 +102,40 @@
                    Margin="21,20" 
                    HorizontalAlignment="Left"
                    VerticalAlignment="top"/>
-            <TextBlock Grid.Row="1"
-                       Margin="51,20,21,20"
-                       FontFamily="{StaticResource Font.Roboto}"
-                       FontSize="16" 
-                       Foreground="#FFB3B3B3"
-                       Text="Username"
-                       Background="{x:Null}"
-                       VerticalAlignment="Top"
-                       HorizontalAlignment="Left">
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="Visibility" Value="Collapsed" />
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Username}" Value="{x:Null}">
-                                <Setter Property="Tag" Value="1" />
-                                <Setter Property="Visibility" Value="Visible" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding Username}" Value="{x:Static system:String.Empty}">
-                                <Setter Property="Tag" Value="2" />
-                                <Setter Property="Visibility" Value="Visible" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=txtUsername, Path=IsKeyboardFocused}" Value="true">
-                                <Setter Property="Tag" Value="3" />
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ElementName=txtUsername, Path=IsKeyboardFocusWithin}" Value="true">
-                                <Setter Property="Tag" Value="4" />
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
 
-            <PasswordBox Grid.Row="2" x:Name="txtPassword" Margin="0,0,0,20" Password="partyanimal" Height="56">
-                <PasswordBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </PasswordBox.Resources>
+            <PasswordBox Grid.Row="2" 
+                         x:Name="txtPassword" 
+                         Margin="0,0,0,20" 
+                         Height="56" 
+                         FontFamily="{StaticResource Font.Roboto}"
+                         FontSize="16" 
+                         IsEnabled="True"
+                         Foreground="#FFB3B3B3"
+                         Padding="51,18,21,20">
+                <services:WatermarkService.Watermark>
+                    <TextBlock Text="Password" 
+                               FontFamily="{StaticResource Font.Roboto}"
+                               FontSize="16" 
+                               Foreground="#FFB3B3B3"/>
+                </services:WatermarkService.Watermark>
+                <PasswordBox.Template>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border CornerRadius="5"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </PasswordBox.Template>
             </PasswordBox>
+            <Image Grid.Row="2"
+                   Source="{StaticResource Icons.Password}"
+                   Height="16"
+                   Width="16"
+                   Margin="21,20" 
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="top"/>
 
             <Button Grid.Row="3"
                     Style="{StaticResource Button.Login}"
