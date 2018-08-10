@@ -1,0 +1,12 @@
+Working with slow, old laptop.
+Never worked with WPF, Caliburn.Micro.
+Could not completely finish the task due to time limitations and lack of front end knowledge.
+
+
+TODO:
+Login interactivity styling, validating, wrong login error
+Global error handling not ensured
+Pass token from login window to servers window.
+Separate thread for getting servers
+Tests
+Old laptop has VS2013 with .NET 4.5
