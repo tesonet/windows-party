@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Image x:Key="ImageServers64" 
+           Source="Images/servers_64.png"/>
+    <Image x:Key="ImageSettings64"
+           Source="Images/settings_64.png" />
+    <Image x:Key="ImageLogout64"
+           Source="Images/logout_64.png" />
+
+    <Image x:Key="ImageSettings32"
+           Source="Images/settings_32.png" />
+    
+    <Image x:Key="ImageDistance20"
+           Source="Images/distance_20.png" />
+</ResourceDictionary>

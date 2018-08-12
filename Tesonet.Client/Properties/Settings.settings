@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Tesonet.Client.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServerAuthUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://playground.tesonet.lt/v1/tokens</Value>
+    </Setting>
+    <Setting Name="ServerServersUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://playground.tesonet.lt/v1/servers</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

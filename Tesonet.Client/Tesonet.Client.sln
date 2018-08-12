@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet.Client", "Tesonet.Client.csproj", "{C6793E63-3484-4D4F-86E0-236618E358B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet.Client.Tests", "..\Tesonet.Client.Tests\Tesonet.Client.Tests.csproj", "{D8271256-26F3-4A6D-A6F8-7BC04B9BCF4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet.Domain", "..\Tesonet.Domain\Tesonet.Domain.csproj", "{4225C996-E423-42BA-AEBC-82B10700CA46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet.ServerProxy", "..\Tesonet.ServerProxy\Tesonet.ServerProxy.csproj", "{D2289F12-BD07-4281-9F59-6E6A511704D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet.ServerProxy.Tests", "..\Tesonet.ServerProxy.Tests\Tesonet.ServerProxy.Tests.csproj", "{E342986F-5704-48CB-A14E-A9A418892404}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6793E63-3484-4D4F-86E0-236618E358B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6793E63-3484-4D4F-86E0-236618E358B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6793E63-3484-4D4F-86E0-236618E358B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6793E63-3484-4D4F-86E0-236618E358B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8271256-26F3-4A6D-A6F8-7BC04B9BCF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8271256-26F3-4A6D-A6F8-7BC04B9BCF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8271256-26F3-4A6D-A6F8-7BC04B9BCF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8271256-26F3-4A6D-A6F8-7BC04B9BCF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4225C996-E423-42BA-AEBC-82B10700CA46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4225C996-E423-42BA-AEBC-82B10700CA46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4225C996-E423-42BA-AEBC-82B10700CA46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4225C996-E423-42BA-AEBC-82B10700CA46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2289F12-BD07-4281-9F59-6E6A511704D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2289F12-BD07-4281-9F59-6E6A511704D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2289F12-BD07-4281-9F59-6E6A511704D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2289F12-BD07-4281-9F59-6E6A511704D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E342986F-5704-48CB-A14E-A9A418892404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E342986F-5704-48CB-A14E-A9A418892404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E342986F-5704-48CB-A14E-A9A418892404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E342986F-5704-48CB-A14E-A9A418892404}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
