@@ -1,0 +1,27 @@
+﻿<Window x:Class="Tesonet.Windows.Party.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:Tesonet.Windows.Party.ViewModels"
+        xmlns:views="clr-namespace:Tesonet.Windows.Party.Views"
+        mc:Ignorable="d"
+        Title="testio." Height="550" Width="825">
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:LogInViewModel}">
+            <views:LogInView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ServerListViewModel}">
+            <views:ServerListView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid x:Name="MainContent"
+              Grid.Row="1">
+            <ContentControl Content="{Binding CurrentViewModel}" />
+        </Grid>
+    </Grid>
+</Window>
