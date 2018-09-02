@@ -1,0 +1,3 @@
+-Switching to Semantic Versioning.
+-Added some exception handling for design time bootstrapper operations.
+-Added a custom converter to the MessageBinder so that we can handle converting to DateTime from string.

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExternalControls</name>
+    </assembly>
+    <members>
+        <member name="T:ExternalControls.PasswordBoxMonitor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ExternalControls.PasswordBoxMonitor.GetIsMonitoring(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExternalControls.PasswordBoxMonitor.SetIsMonitoring(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:ExternalControls.PasswordBoxMonitor.IsMonitoringProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ExternalControls.PasswordBoxMonitor.GetPasswordLength(System.Windows.DependencyObject)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExternalControls.PasswordBoxMonitor.SetPasswordLength(System.Windows.DependencyObject,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:ExternalControls.PasswordBoxMonitor.PasswordLengthProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ExternalControls.LoginEventArgs.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ExternalControls.LoginEventArgs"/> class.
+            </summary>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="T:ExternalControls.LoginWindow">
+            <summary>
+            LoginWindow
+            </summary>
+        </member>
+        <member name="M:ExternalControls.LoginWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ExternalControls.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ExternalControls.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ExternalControls.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

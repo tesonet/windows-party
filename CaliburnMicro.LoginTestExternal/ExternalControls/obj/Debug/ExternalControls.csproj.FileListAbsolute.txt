@@ -1,0 +1,55 @@
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.XML
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.dll
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.pdb
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csprojResolveAssemblyReference.cache
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.baml
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.g.cs
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls_MarkupCompile.cache
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.g.resources
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.Properties.Resources.resources
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csproj.GenerateResource.Cache
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.dll
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.pdb
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.XML
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.dll
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.pdb
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.g.cs
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls_MarkupCompile.cache
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls_MarkupCompile.lref
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.baml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.g.resources
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.Properties.Resources.resources
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csproj.GenerateResource.Cache
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csproj.CoreCompileInputs.cache
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.dll
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.pdb
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.XML
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.dll
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.pdb
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csprojResolveAssemblyReference.cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.g.cs
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls_MarkupCompile.cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls_MarkupCompile.lref
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.baml
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.g.resources
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.Properties.Resources.resources
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csproj.GenerateResource.Cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csproj.CoreCompileInputs.cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.dll
+C:\WPF3\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.pdb
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.XML
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.dll
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\bin\Debug\ExternalControls.pdb
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.g.cs
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls_MarkupCompile.cache
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls_MarkupCompile.lref
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\LoginWindow.baml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.g.resources
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.Properties.Resources.resources
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csproj.GenerateResource.Cache
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.csproj.CoreCompileInputs.cache
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.dll
+C:\WPFTask\CaliburnMicro.LoginTestExternal\ExternalControls\obj\Debug\ExternalControls.pdb

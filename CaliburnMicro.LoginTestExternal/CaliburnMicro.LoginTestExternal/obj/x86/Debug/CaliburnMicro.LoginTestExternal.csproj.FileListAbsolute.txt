@@ -1,0 +1,110 @@
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.pdb
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.dll
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.dll
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.dll
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.pdb
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.xml
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.pdb
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.xml
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.xml
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csprojResolveAssemblyReference.cache
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.baml
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.g.cs
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.g.cs
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.cache
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.lref
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.baml
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.g.resources
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.Properties.Resources.resources
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csproj.GenerateResource.Cache
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\V\Projects\OneOffs\Kihonkai-Xilo Export\Source\Attempt 002\files\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.pdb
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.pdb
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.dll
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.dll
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.dll
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.pdb
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.xml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.pdb
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.xml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.xml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csprojResolveAssemblyReference.cache
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.baml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.g.cs
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.g.cs
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.cache
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.lref
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.baml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.g.resources
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.Properties.Resources.resources
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csproj.GenerateResource.Cache
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csproj.CoreCompileInputs.cache
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.pdb
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Newtonsoft.Json.dll
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Net.Http.dll
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Newtonsoft.Json.xml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Net.Http.xml
+C:\ESMA\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.exe.config
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.exe.config
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.pdb
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.dll
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.dll
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Newtonsoft.Json.dll
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Net.Http.dll
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.dll
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.pdb
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.xml
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.pdb
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.xml
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Newtonsoft.Json.xml
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Net.Http.xml
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.xml
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csprojResolveAssemblyReference.cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.baml
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.g.cs
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.g.cs
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.lref
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.baml
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.g.resources
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.Properties.Resources.resources
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csproj.GenerateResource.Cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csproj.CoreCompileInputs.cache
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\WPF3\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.pdb
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.exe.config
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\CaliburnMicro.LoginTestExternal.pdb
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.dll
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.dll
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Newtonsoft.Json.dll
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Net.Http.dll
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.dll
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.pdb
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\ExternalControls.xml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.pdb
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Caliburn.Micro.xml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\Newtonsoft.Json.xml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Net.Http.xml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\bin\Debug\System.Windows.Interactivity.xml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csprojResolveAssemblyReference.cache
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.baml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\Views\ContentView.g.cs
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.g.cs
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.cache
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal_MarkupCompile.lref
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\App.baml
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.g.resources
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.Properties.Resources.resources
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csproj.GenerateResource.Cache
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.csproj.CoreCompileInputs.cache
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.exe
+C:\WPFTask\CaliburnMicro.LoginTestExternal\CaliburnMicro.LoginTestExternal\obj\x86\Debug\CaliburnMicro.LoginTestExternal.pdb
