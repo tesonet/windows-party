@@ -7,7 +7,7 @@ using WindowsPartyApp.Model;
 
 namespace WindowsPartyApp.Servers
 {
-    class ServersViewModel: Screen
+    public class ServersViewModel: Screen
     {
         private readonly IEventAggregator eventAggregator;
         private readonly AuthToken authToken;

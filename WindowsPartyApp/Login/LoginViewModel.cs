@@ -16,6 +16,8 @@ namespace WindowsPartyApp.Login
         private readonly ILoginValidator loginValidator;
         private readonly IEventAggregator eventAggregator;
 
+        private readonly ILog log = LogManager.GetLog(typeof(LoginViewModel));
+
         public LoginViewModel(IApi tesonetApi, IEventAggregator eventAggregator, ILoginValidator loginValidator)
         {
             this.tesonetApi = tesonetApi;
@@ -68,6 +70,7 @@ namespace WindowsPartyApp.Login
             }
             catch (Exception ex)
             {
+                log.Error(ex);
                 Message = ex.Message;
             }
         }

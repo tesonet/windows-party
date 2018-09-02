@@ -17,8 +17,6 @@ namespace WindowsPartyApp.Start
     {
         private static readonly Container container = new Container();
 
-        private readonly ILog _log = LogManager.GetLog(typeof(AppBootstrapper));
-
         public AppBootstrapper()
         {
             LogManager.GetLog = type => new NLogLogger(type);
@@ -44,7 +42,6 @@ namespace WindowsPartyApp.Start
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            _log.Info("test");
             DisplayRootViewFor<ShellViewModel>();
         }
 
