@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Projects\WindowsParty\source\App\Assets\io-lt.png</Source>
+    <SmallTileSource>C:\Projects\WindowsParty\source\App\Assets\io-lt.png</SmallTileSource>
+    <MediumTileSource>C:\Projects\UWPSample\App\Assets\testio-lt.png</MediumTileSource>
+    <WideTileSource>C:\Projects\UWPSample\App\Assets\testio-lt.png</WideTileSource>
+    <LargeTileSource>C:\Projects\UWPSample\App\Assets\testio-lt.png</LargeTileSource>
+    <AppIconSource>C:\Projects\WindowsParty\source\App\Assets\io-lt.png</AppIconSource>
+    <SplashScreenSource>C:\Projects\UWPSample\App\Assets\testio-lt.png</SplashScreenSource>
+    <PackageLogoSource>C:\Projects\WindowsParty\source\App\Assets\io-lt.png</PackageLogoSource>
+    <ProjectView>ProjectFiles</ProjectView>
+    <AppxPackageIsForStore>False</AppxPackageIsForStore>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>arm</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+    <RemoteMachine0>192.168.1.168</RemoteMachine0>
+    <UseAuthentication0>False</UseAuthentication0>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>false</UseEmulator>
+    <RemoteDebugMachine>192.168.1.168</RemoteDebugMachine>
+    <AuthenticationMode>Universal</AuthenticationMode>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>false</UseEmulator>
+    <RemoteDebugMachine>192.168.1.168</RemoteDebugMachine>
+    <AuthenticationMode>Universal</AuthenticationMode>
+    <RemoteDebugEnabled>true</RemoteDebugEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>false</UseEmulator>
+    <RemoteDebugMachine>192.168.1.168</RemoteDebugMachine>
+    <AuthenticationMode>Windows</AuthenticationMode>
+    <RemoteDebugEnabled>true</RemoteDebugEnabled>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DebugEngines>
+    </DebugEngines>
+    <BackgroundTaskDebugEngines>
+    </BackgroundTaskDebugEngines>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <UseSimulator>true</UseSimulator>
+  </PropertyGroup>
+</Project>
