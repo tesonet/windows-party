@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WindowsParty.UI.Windows.Views.ServerListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WindowsParty.UI.Windows.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Grid Height="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="LogoPart"/>
+                    <ColumnDefinition x:Name="LogoutPart"/>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Column="0" Source="../Assets/testio-logo.png" Width="100" Height="100"></Image>
+                <Button x:Name="Logout" HorizontalAlignment="Right" Grid.Column="1" Width="100" Margin="0,26,10,35" FontFamily="Roboto"
+                        Foreground="#2f3254">Logout</Button>
+            </Grid>
+        </DockPanel>
+        <Grid Grid.Row="1" Background="AntiqueWhite" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="Grid"/>
+                <ColumnDefinition x:Name="RightSideImage"/>
+            </Grid.ColumnDefinitions>
+            <ListView x:Name="ServerListControl" ItemsSource="{Binding Path=ServerList, Mode=OneWay, NotifyOnTargetUpdated=True}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="NAME"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Distance}" Header="DISTANCE" ></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Image x:Name="SideImage" Grid.Column="1" Source="../Assets/server-list-right-side.png" Margin="0,0,0,0" Stretch="Fill" />
+        </Grid>
+    </Grid>
+</UserControl>
