@@ -1,0 +1,31 @@
+﻿<UserControl 
+    x:Class="Tesonet.Views.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+
+    xmlns:local="clr-namespace:Tesonet.ViewModels" 
+    Background="#FF0B0F27"
+    
+    mc:Ignorable="d"  
+   
+    d:DesignHeight="800" 
+    d:DesignWidth="1000">
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+    <Grid>
+        <Image Source="/Tesonet;component/Resources/baga.png" VerticalAlignment="top" HorizontalAlignment="Left" Stretch="None" Margin="-250,-130,-317,-264" Opacity="0.2" Height="1364"
+               Width="1500" />
+
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox Text="tesonet" x:Name="txtUsername"/>
+                
+                <TextBox Text="partyanimal" x:Name="txtPassword" Margin="0,10,0,0"></TextBox>
+                <Button x:Name="Login" Content="Log In" Height="50" Background="#FF86B300" Width="300" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

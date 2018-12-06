@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesonet", "Tesonet\Tesonet.csproj", "{F965AE88-11A2-457B-B634-EE8AB8555B98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesonetTests", "TesonetTests\TesonetTests.csproj", "{1D518FF8-1D34-42A2-BDA6-00115897D8B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F965AE88-11A2-457B-B634-EE8AB8555B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F965AE88-11A2-457B-B634-EE8AB8555B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F965AE88-11A2-457B-B634-EE8AB8555B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F965AE88-11A2-457B-B634-EE8AB8555B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D518FF8-1D34-42A2-BDA6-00115897D8B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D518FF8-1D34-42A2-BDA6-00115897D8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D518FF8-1D34-42A2-BDA6-00115897D8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D518FF8-1D34-42A2-BDA6-00115897D8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDBBE3D0-1B04-45F4-BA21-CA9BD6C4D834}
+	EndGlobalSection
+EndGlobal

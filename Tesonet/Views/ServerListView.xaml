@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Tesonet.Views.ServerListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tesonet.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="700">
+    <Grid MinWidth="700" MinHeight="450">
+        <Image Source="/Tesonet;component/Resources/bgs.png"
+               VerticalAlignment="Stretch"
+               HorizontalAlignment="Stretch"               
+               Stretch="UniformToFill"/>
+        
+
+        <Grid Panel.ZIndex="100" MinWidth="700" MinHeight="450">
+            <Button Content="Logout" x:Name="Logout" Panel.ZIndex="500" Margin="446,6,154,414" Width="100" Height="30">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" Opacity="0.1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                        <GradientStop Color="#FFCDCDCD" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <ListBox Margin="17,96,402,19" MaxWidth="300" MinWidth="200" ItemsSource="{Binding Items}">
+                <ListBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.1"/>
+                </ListBox.Background>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=name}" />
+                            <TextBlock Text="{Binding Path=distance}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        
+    </Grid>
+</UserControl>
