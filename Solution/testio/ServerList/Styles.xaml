@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="DistanceFormat">{0} km</sys:String>
+    
+    <!--LogoutButton-->
+    <Style TargetType="Button" x:Key="LogoutButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <StackPanel Orientation="Horizontal">                        
+                        <Image Source="{StaticResource LogoutBitmap}" Style="{DynamicResource SmallImageInControl}"/>
+                        <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" FontFamily="{DynamicResource DefaultFontFamily}" FontWeight="Light" FontSize="14" Foreground="{StaticResource LogoutForegroundBrush}"/>
+                        <StackPanel.Style>
+                            <Style TargetType="{x:Type StackPanel}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource LogoutButtonHoverBrush}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Thickness x:Key="ItemsMargin" Left="30" Top="0" Right="30" Bottom="0" />
+    <Style x:Key="HeaderItemsStyle" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="{StaticResource ItemsMargin}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource ListViewItemForegroundBrush}" />
+    </Style>
+    <Style x:Key="ItemsStyle" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="{StaticResource ItemsMargin}" />
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="{StaticResource ListViewItemForegroundBrush}" />        
+    </Style>
+
+</ResourceDictionary>

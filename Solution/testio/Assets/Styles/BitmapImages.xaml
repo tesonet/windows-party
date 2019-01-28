@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="WhiteLogoBitmap" UriSource="/Assets/Images/logotype-testio-white.png" />
+    <BitmapImage x:Key="DarkLogoBitmap" UriSource="/Assets/Images/logotype-testio.png" />
+    
+    <BitmapImage x:Key="LoginBackgroundBitmap" UriSource="/Assets/Images/LoginBackground.png" />
+    <BitmapImage x:Key="ServerListBackgroundBitmap" UriSource="/Assets/Images/ServerListBackground.jpg" />
+    
+    <BitmapImage x:Key="UsernameBitmap" UriSource="/Assets/Images/ico-username.png" />    
+    <BitmapImage x:Key="PasswordBitmap" UriSource="/Assets/Images/ico-lock.png" />
+    <BitmapImage x:Key="LogoutBitmap" UriSource="/Assets/Images/ico-logout.png" />
+</ResourceDictionary>

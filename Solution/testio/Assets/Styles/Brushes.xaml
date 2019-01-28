@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--ServerList-->
+    <SolidColorBrush x:Key="HeaderBackgrounBrush" Color="#F5F5F5"/>
+    <SolidColorBrush x:Key="HeaderForegroundBrush" Color="#999999"/>
+    <SolidColorBrush x:Key="ListViewItemForegroundBrush" Color="#666666"/>
+    <SolidColorBrush x:Key="ListViewItemBorderBrush" Color="#E5E5E5"/>
+    <SolidColorBrush x:Key="LogoutForegroundBrush" Color="#2F3254"/>
+    <SolidColorBrush x:Key="LogoutButtonHoverBrush" Color="#99CC33"/>
+    
+    <SolidColorBrush x:Key="DarkBackgroundBrush" Color="#0b0f27"/>
+</ResourceDictionary>

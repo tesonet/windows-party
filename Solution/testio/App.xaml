@@ -1,0 +1,24 @@
+﻿<Application x:Class="testio.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:testio">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>                
+                <ResourceDictionary>
+                    <local:Bootstrapper x:Key="Bootstrapper" />
+                </ResourceDictionary>
+                <!--App-->
+                <ResourceDictionary Source="Assets/Styles/BitmapImages.xaml" />
+                <ResourceDictionary Source="Assets/Styles/Brushes.xaml" />
+                <ResourceDictionary Source="Assets/Styles/Converters.xaml" />                
+                <ResourceDictionary Source="Assets/Styles/Fonts.xaml" />
+                <!--Views-->
+                <ResourceDictionary Source="Login/Styles.xaml" />
+                <ResourceDictionary Source="ServerList/Styles.xaml" />
+                <!--Tesio.Controls-->
+                <ResourceDictionary Source="/testio.Controls;component/Themes/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
