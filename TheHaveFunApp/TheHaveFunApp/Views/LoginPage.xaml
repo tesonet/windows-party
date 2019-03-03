@@ -3,14 +3,16 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:TheHaveFunApp.Helpers"
     xmlns:local="clr-namespace:TheHaveFunApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:svg2xaml="clr-namespace:Svg2Xaml;assembly=Svg2Xaml"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
 
     <Grid>
-        <Image Source="../Images/LoginBackground.jpg" />
+        <Image Source="../Images/LoginBackground.jpg" Stretch="UniformToFill" />
         <StackPanel
             Width="300"
             MaxWidth="300"
@@ -26,26 +28,100 @@
                 <Span
                     FontSize="50"
                     FontWeight="Bold"
-                    Foreground="red">
+                    Foreground="#9ed532">
                     .
                 </Span>
             </TextBlock>
 
-            <Border Background="White">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Gray" />
-                    <TextBlock Foreground="Gray" Text="Username" />
-                </StackPanel>
+            <Border
+                x:Name="brdUserName"
+                Height="50"
+                Margin="0,5"
+                Padding="10"
+                Background="White"
+                CornerRadius="5"
+                MouseDown="BrdUserName_MouseDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.Column="0"
+                        Width="12"
+                        Height="12"
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Center"
+                        Source="{svg2xaml:SvgImage ../Images/user.svg}" />
+                    <TextBlock
+                        x:Name="txtUserName"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Foreground="Gray"
+                        Text="Username" />
+                    <TextBox
+                        x:Name="entryUserName"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Stretch"
+                        BorderThickness="0"
+                        LostFocus="EntryUserName_LostFocus"
+                        Text="{Binding UserName}"
+                        Visibility="Collapsed" />
+                </Grid>
             </Border>
-            <TextBox Text="{Binding UserName}" />
-            <TextBox Text="{Binding Password}" />
-            <Button Command="{Binding LoginCommand}" Content="Log in">
+
+            <Border
+                x:Name="brdPassword"
+                Height="50"
+                Margin="0,5"
+                Padding="10"
+                Background="White"
+                CornerRadius="5"
+                MouseDown="BrdPassword_MouseDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        Grid.Column="0"
+                        Width="12"
+                        Height="12"
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Center"
+                        Source="{svg2xaml:SvgImage ../Images/lock.svg}" />
+                    <TextBlock
+                        x:Name="txtPassword"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Foreground="Gray"
+                        Text="Password" />
+                    <PasswordBox
+                        x:Name="entryPassword"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Stretch"
+                        helpers:PasswordHelper.Attach="True"
+                        helpers:PasswordHelper.Password="{Binding Password}"
+                        BorderThickness="0"
+                        LostFocus="EntryPassword_LostFocus"
+                        PasswordChar="*"
+                        Visibility="Collapsed" />
+                </Grid>
+            </Border>
+
+            <Button
+                Height="50"
+                Margin="0,5"
+                Command="{Binding LoginCommand}"
+                Content="Log in">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#9ed532" />
                         <Setter Property="Foreground" Value="#FFF" />
                         <Setter Property="FontSize" Value="15" />
-                        <Setter Property="Margin" Value="5" />
+                        <Setter Property="FontWeight" Value="Bold" />
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
