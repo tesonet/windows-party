@@ -152,5 +152,8 @@
   <ItemGroup>
     <Resource Include="Crypto\Internal\Salsa\replace regex.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

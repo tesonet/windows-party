@@ -30,23 +30,43 @@
                     .
                 </Span>
             </TextBlock>
+
+            <Border Background="White">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Gray" />
+                    <TextBlock Foreground="Gray" Text="Username" />
+                </StackPanel>
+            </Border>
             <TextBox Text="{Binding UserName}" />
             <TextBox Text="{Binding Password}" />
-            <Button Command="{Binding LoginCommand}">
-                <Button.Content>
-                    <Border
-                        Width="95"
-                        Height="25"
-                        Margin="0"
-                        BorderBrush="Black"
-                        BorderThickness="4,4,4,4"
-                        CornerRadius="5">
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Text="Log in" />
-                    </Border>
-                </Button.Content>
+            <Button Command="{Binding LoginCommand}" Content="Log in">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#9ed532" />
+                        <Setter Property="Foreground" Value="#FFF" />
+                        <Setter Property="FontSize" Value="15" />
+                        <Setter Property="Margin" Value="5" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                                        Padding="5"
+                                        Background="{TemplateBinding Background}"
+                                        BorderThickness="0"
+                                        CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#86b300" />
+                                <Setter Property="Foreground" Value="#fff" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
             </Button>
         </StackPanel>
     </Grid>
