@@ -1,0 +1,2 @@
+﻿http://blog.csdn.net/csethcrm/article/details/17549787
+HttpWebRequest的GetResponse或GetRequestStream偶尔超时 + 总结各种超时死掉的可能和相应的解决办法

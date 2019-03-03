@@ -11,6 +11,7 @@ using Prism;
 using Prism.Ioc;
 using Prism.Regions;
 using Prism.Unity;
+using TheHaveFunApp.Services;
 using TheHaveFunApp.ViewModels;
 using TheHaveFunApp.Views;
 
@@ -30,7 +31,8 @@ namespace TheHaveFunApp
 
             IRegionManager regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
             regionManager.AddToRegion("MainRegion", this.Container.Resolve<LoginPage>());
-          
+           // regionManager.AddToRegion("MainRegion", this.Container.Resolve<ServersListPage>());
+
         }
 
 
@@ -42,6 +44,8 @@ namespace TheHaveFunApp
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<ServersListPage, ServersListPageViewModel>();
+            containerRegistry.RegisterSingleton<IHttpService, HttpService>();
         }
     }
 }
