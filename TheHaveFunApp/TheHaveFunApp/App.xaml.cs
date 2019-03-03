@@ -30,6 +30,7 @@ namespace TheHaveFunApp
 
             IRegionManager regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
             regionManager.AddToRegion("MainRegion", this.Container.Resolve<LoginPage>());
+          
         }
 
 
