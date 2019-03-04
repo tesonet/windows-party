@@ -129,16 +129,52 @@
                 <TextBlock
                     Grid.Column="0"
                     Margin="20,15,0,15"
+                    HorizontalAlignment="Left"
                     FontSize="15"
-                    Foreground="#9E9E9E"
-                    Text="SERVER" />
+                    Text="SERVER">
+                    <TextBlock.InputBindings>
+                        <MouseBinding
+                            Command="{Binding SortCommand}"
+                            CommandParameter="name"
+                            MouseAction="LeftClick" />
+                    </TextBlock.InputBindings>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.Foreground" Value="#9E9E9E" />
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="TextBlock.Foreground" Value="#1ba1e2" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+
+
                 <TextBlock
                     Grid.Column="1"
                     Margin="0,15,20,15"
                     HorizontalAlignment="Right"
                     FontSize="15"
-                    Foreground="#9E9E9E"
-                    Text="DISTANCE" />
+                    Text="DISTANCE">
+                    <TextBlock.InputBindings>
+                        <MouseBinding
+                            Command="{Binding SortCommand}"
+                            CommandParameter="distance"
+                            MouseAction="LeftClick" />
+                    </TextBlock.InputBindings>
+                    <TextBlock.Style>
+                        <Style>
+                            <Setter Property="TextBlock.Foreground" Value="#9E9E9E" />
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="TextBlock.Foreground" Value="#1ba1e2" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
             </Grid>
 
 
