@@ -82,74 +82,82 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <ItemsControl
-                HorizontalContentAlignment="Stretch"
-                Background="Yellow"
-                ItemsSource="{Binding Servers}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <TextBlock
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                Margin="20,15,0,15"
-                                FontSize="18"
-                                Foreground="#757575"
-                                Text="{Binding Name}" />
-                            <TextBlock
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                Margin="0,15,20,15"
-                                HorizontalAlignment="Right"
-                                FontSize="18"
-                                Foreground="#757575"
-                                Text="{Binding Distance, StringFormat={}{0} km}" />
-                            <Separator
-                                Grid.Row="0"
-                                Grid.ColumnSpan="2"
-                                Margin="0"
-                                Background="#EEEEEE" />
-                        </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-                <ItemsControl.Template>
-                    <ControlTemplate>
-                        <Border Padding="0" Background="White">
-                            <StackPanel>
-                                <Separator Margin="0" Background="#EEEEEE" />
-                                <Grid Background="#f5f5f5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock
-                                        Grid.Column="0"
-                                        Margin="20,15,0,15"
-                                        FontSize="15"
-                                        Foreground="#9E9E9E"
-                                        Text="SERVER" />
-                                    <TextBlock
-                                        Grid.Column="1"
-                                        Margin="0,15,20,15"
-                                        HorizontalAlignment="Right"
-                                        FontSize="15"
-                                        Foreground="#9E9E9E"
-                                        Text="DISTANCE" />
-                                </Grid>
-                                <ItemsPresenter />
-                            </StackPanel>
-                        </Border>
-                    </ControlTemplate>
-                </ItemsControl.Template>
-            </ItemsControl>
+            <Separator
+                Grid.Row="0"
+                Margin="0"
+                Background="#EEEEEE" />
+            <Grid Grid.Row="0" Background="#f5f5f5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    Margin="20,15,0,15"
+                    FontSize="15"
+                    Foreground="#9E9E9E"
+                    Text="SERVER" />
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="0,15,20,15"
+                    HorizontalAlignment="Right"
+                    FontSize="15"
+                    Foreground="#9E9E9E"
+                    Text="DISTANCE" />
+            </Grid>
+
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <ItemsControl
+                    HorizontalContentAlignment="Stretch"
+                    Background="Yellow"
+                    ItemsSource="{Binding Servers}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Margin="20,15,0,15"
+                                    FontSize="18"
+                                    Foreground="#757575"
+                                    Text="{Binding Name}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="0,15,20,15"
+                                    HorizontalAlignment="Right"
+                                    FontSize="18"
+                                    Foreground="#757575"
+                                    Text="{Binding Distance, StringFormat={}{0} km}" />
+                                <Separator
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2"
+                                    Margin="0"
+                                    Background="#EEEEEE" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.Template>
+                        <ControlTemplate>
+                            <Border Padding="0" Background="White">
+                                <StackPanel>
+
+                                    <ItemsPresenter />
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                </ItemsControl>
+            </ScrollViewer>
         </Grid>
 
 
