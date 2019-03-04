@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 using Prism.Regions;
 using System.Collections.Generic;
 using TheHaveFunApp.Models;
@@ -19,13 +20,23 @@ namespace TheHaveFunApp.ViewModels
             _httpService = httpService;
 
             FetchServers();
+
+            LogoutCommand = new DelegateCommand(Logout);
         }
+
+        public DelegateCommand LogoutCommand { get; }
 
         public List<ServerModel> Servers { get; private set; } = new List<ServerModel>();
 
         private void FetchServers()
         {
             Servers = new List<ServerModel>(_httpService.GetServersList());
+        }
+
+        private void Logout()
+        {
+            _httpService.Logout();
+            _regionManager.RequestNavigate("MainRegion", "LoginPage");
         }
     }
 }

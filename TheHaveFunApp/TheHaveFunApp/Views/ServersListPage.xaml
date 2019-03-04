@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TheHaveFunApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:svg2xaml="clr-namespace:Svg2Xaml;assembly=Svg2Xaml"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -24,7 +25,7 @@
         <TextBlock
             Grid.Row="0"
             Grid.Column="0"
-            Padding="20,0,0,0"
+            Padding="20,15,0,15"
             HorizontalAlignment="Left">
             <Span
                 FontSize="30"
@@ -72,6 +73,40 @@
         </Grid>
 
 
+
+        <Border
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="0,15,20,15"
+            HorizontalAlignment="Right"
+            BorderThickness="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock
+                    Margin="0,0,10,0"
+                    VerticalAlignment="Center"
+                    Text="Logout" />
+                <Image
+                    Grid.Column="0"
+                    Width="12"
+                    Height="12"
+                    Margin="0,0,10,0"
+                    VerticalAlignment="Center"
+                    Source="{svg2xaml:SvgImage ../Images/sign-out-alt.svg}" />
+            </StackPanel>
+            <Border.Style>
+                <Style>
+                    <Setter Property="Border.BorderBrush" Value="White" />
+                    <Style.Triggers>
+                        <Trigger Property="Border.IsMouseOver" Value="True">
+                            <Setter Property="Border.BorderBrush" Value="#99cc33" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Border.InputBindings>
+                <MouseBinding Command="{Binding LogoutCommand}" MouseAction="LeftClick" />
+            </Border.InputBindings>
+        </Border>
 
         <Grid
             Grid.Row="1"
@@ -159,7 +194,5 @@
                 </ItemsControl>
             </ScrollViewer>
         </Grid>
-
-
     </Grid>
 </UserControl>

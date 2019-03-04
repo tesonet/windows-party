@@ -7,5 +7,6 @@ namespace TheHaveFunApp.Services
     {
         IEnumerable<ServerModel> GetServersList();
         bool Login(string userName, string password);
+        void Logout();
     }
 }

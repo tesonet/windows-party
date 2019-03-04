@@ -60,5 +60,10 @@ namespace TheHaveFunApp.Services
                 throw new Exception("There was error in sending request", response.Exception);
             }
         }
+
+        public void Logout()
+        {
+            _token = string.Empty;            
+        }
     }
 }

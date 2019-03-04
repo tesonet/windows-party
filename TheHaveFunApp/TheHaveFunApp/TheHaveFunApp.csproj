@@ -163,5 +163,8 @@
     <Resource Include="Images\lock.svg" />
     <Resource Include="Images\user.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sign-out-alt.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
