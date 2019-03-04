@@ -1,10 +1,6 @@
 ﻿using Prism.Mvvm;
 using Prism.Regions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheHaveFunApp.Models;
 using TheHaveFunApp.Services;
 
@@ -25,12 +21,11 @@ namespace TheHaveFunApp.ViewModels
             FetchServers();
         }
 
+        public List<ServerModel> Servers { get; private set; } = new List<ServerModel>();
+
         private void FetchServers()
         {
             Servers = new List<ServerModel>(_httpService.GetServersList());
         }
-
-
-        public List<ServerModel> Servers { get; private set; } = new List<ServerModel>();
     }
 }
