@@ -89,6 +89,7 @@
     <Compile Include="Collections\ServersList.cs" />
     <Compile Include="Enums\SortType.cs" />
     <Compile Include="Extensions\ObservableCollectionExtensions.cs" />
+    <Compile Include="Helpers\OverrideMouse.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Models\ServerModel.cs" />
     <Compile Include="Models\Token.cs" />

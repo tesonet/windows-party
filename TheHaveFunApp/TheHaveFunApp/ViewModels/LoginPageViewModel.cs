@@ -3,6 +3,7 @@ using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Threading.Tasks;
+using TheHaveFunApp.Helpers;
 using TheHaveFunApp.Services;
 
 namespace TheHaveFunApp.ViewModels
@@ -49,12 +50,19 @@ namespace TheHaveFunApp.ViewModels
             return !string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password);
         }
 
+        private bool ExecuteLogin()
+        {
+            return _httpService.Login(this.UserName, this.Password);
+        }
+
         private async void Login()
         {
-            await Task.Delay(20);
-          //  if (_httpService.Login("", ""))
+            using (new OverrideMouse())
             {
-                _regionManager.RequestNavigate("MainRegion", "ServersListPage");
+                if (await Task.Run(() => ExecuteLogin()))
+                {
+                    _regionManager.RequestNavigate("MainRegion", "ServersListPage");
+                }
             }
         }
     }
