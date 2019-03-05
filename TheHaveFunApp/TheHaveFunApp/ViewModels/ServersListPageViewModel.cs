@@ -2,7 +2,9 @@
 using Prism.Mvvm;
 using Prism.Regions;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using TheHaveFunApp.Collections;
 using TheHaveFunApp.Enums;
 using TheHaveFunApp.Models;
 using TheHaveFunApp.Services;
@@ -16,9 +18,7 @@ namespace TheHaveFunApp.ViewModels
 
         private readonly IRegionManager _regionManager;
 
-        private SortType _sortedByDistance = SortType.Default;
-
-        private SortType _sortedByName = SortType.Default;
+  
 
         public ServersListPageViewModel(IRegionManager regionManager, IHttpService httpService)
         {
@@ -33,11 +33,12 @@ namespace TheHaveFunApp.ViewModels
 
         public DelegateCommand LogoutCommand { get; }
 
-        public List<ServerModel> Servers { get; private set; } = new List<ServerModel>();
+        public ServersList Servers { get; private set; } = new ServersList();
         public DelegateCommand<string> SortCommand { get; }
         private void FetchServers()
         {
-            Servers = new List<ServerModel>(_httpService.GetServersList());
+            Servers.Clear();
+            Servers.AddRange(_httpService.GetServersList());
         }
 
         private void Logout()
@@ -48,32 +49,8 @@ namespace TheHaveFunApp.ViewModels
 
         private void Sort(string column)
         {
-            if (column == "name")
-            {
-                if (_sortedByName == SortType.Default || _sortedByName == SortType.Desc)
-                {
-                    Servers = new List<ServerModel>(Servers.OrderBy(i => i.Name));
-                    _sortedByName = SortType.Asc;
-                }
-                else
-                {
-                    Servers = new List<ServerModel>(Servers.OrderByDescending(i => i.Name));
-                    _sortedByName = SortType.Desc;
-                }
-            }
-            else
-            {
-                if (_sortedByDistance == SortType.Default || _sortedByDistance == SortType.Desc)
-                {
-                    Servers = new List<ServerModel>(Servers.OrderBy(i => i.Distance));
-                    _sortedByDistance = SortType.Asc;
-                }
-                else
-                {
-                    Servers = new List<ServerModel>(Servers.OrderByDescending(i => i.Distance));
-                    _sortedByDistance = SortType.Desc;
-                }
-            }
+            Servers.SortByProperty(column);
+           
             this.RaisePropertyChanged(nameof(Servers));
         }
     }
