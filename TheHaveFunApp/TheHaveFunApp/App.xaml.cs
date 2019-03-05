@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Xml;
 using CommonServiceLocator;
-using Prism;
 using Prism.Ioc;
 using Prism.Regions;
 using Prism.Unity;
@@ -22,19 +15,15 @@ namespace TheHaveFunApp
     /// </summary>
     public partial class App : PrismApplication
     {
-
-
-
         public override void Initialize()
         {
             base.Initialize();
 
             IRegionManager regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
             regionManager.AddToRegion("MainRegion", this.Container.Resolve<LoginPage>());
-           // regionManager.AddToRegion("MainRegion", this.Container.Resolve<ServersListPage>());
 
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         }
-
 
         protected override Window CreateShell()
         {
@@ -46,6 +35,11 @@ namespace TheHaveFunApp
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<ServersListPage, ServersListPageViewModel>();
             containerRegistry.RegisterSingleton<IHttpService, HttpService>();
+        }
+
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show((e.ExceptionObject as Exception)?.Message);
         }
     }
 }

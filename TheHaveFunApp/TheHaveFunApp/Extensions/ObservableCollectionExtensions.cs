@@ -6,14 +6,6 @@ namespace TheHaveFunApp.Extensions
 {
     public static class ObservableCollectionExtensions
     {
-        //public static void AddRange<T>(this ObservableCollection<T> collection, IEnumerable<T> collectionToAdd)
-        //{
-        //    foreach (var item in collectionToAdd)
-        //    {
-        //        collection.Add(item);
-        //    }
-        //}
-
         public static void Sort<T>(this ObservableCollection<T> collection, Comparison<T> comparison)
         {
             var sortableList = new List<T>(collection);

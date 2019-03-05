@@ -8,7 +8,7 @@ using TheHaveFunApp.Models;
 
 namespace TheHaveFunApp.Services
 {
-    public class HttpService: IHttpService
+    public class HttpService : IHttpService
     {
         private const string UrlServers = "http://playground.tesonet.lt/v1/servers";
         private const string UrlTokens = "http://playground.tesonet.lt/v1/tokens";
@@ -22,15 +22,21 @@ namespace TheHaveFunApp.Services
                 .SetHttpMethod("GET")
                 .WithHeader("Authorization", $"Bearer {_token}")
                 .Build();
-
-            var response = RequestManager.GetResponse(request);
-            if (response.Exception == null)
+            try
             {
-                _servers = JsonConvert.DeserializeObject<List<ServerModel>>(response.Text);
+                var response = RequestManager.GetResponse(request);
+                if (response.Exception == null)
+                {
+                    _servers = JsonConvert.DeserializeObject<List<ServerModel>>(response.Text);
+                }
+                else
+                {
+                    throw new Exception("There was error in sending request", response.Exception);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                throw new Exception("There was error in sending request", response.Exception);
+                throw new Exception("There was error in sending request", ex);
             }
 
             return _servers;
@@ -38,8 +44,8 @@ namespace TheHaveFunApp.Services
 
         public bool Login(string userName, string password)
         {
-            userName = "tesonet";
-            password = "partyanimal";
+            //userName = "tesonet";
+            //password = "partyanimal";
 
             var request = RequestBuilder.Create("default")
                 .SetUrl(UrlTokens)
@@ -48,22 +54,29 @@ namespace TheHaveFunApp.Services
                 .WithTextInput("password", password)
                 .Build();
 
-            var response = RequestManager.GetResponse(request);
-            if (response.Exception == null)
+            try
             {
-                var data = (JObject)JsonConvert.DeserializeObject(response.Text);
-                _token = data["token"].Value<string>();
-                return true;
+                var response = RequestManager.GetResponse(request);
+                if (response.Exception == null)
+                {
+                    var data = (JObject)JsonConvert.DeserializeObject(response.Text);
+                    _token = data["token"].Value<string>();
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("There was error in sending request", response.Exception);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                throw new Exception("There was error in sending request", response.Exception);
+                throw new Exception("There was error in sending request", ex);
             }
         }
 
         public void Logout()
         {
-            _token = string.Empty;            
+            _token = string.Empty;
         }
     }
 }

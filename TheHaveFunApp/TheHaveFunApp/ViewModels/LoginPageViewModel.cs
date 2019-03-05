@@ -52,7 +52,7 @@ namespace TheHaveFunApp.ViewModels
         private async void Login()
         {
             await Task.Delay(20);
-            if (_httpService.Login("", ""))
+          //  if (_httpService.Login("", ""))
             {
                 _regionManager.RequestNavigate("MainRegion", "ServersListPage");
             }
