@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Threading;
+using System.Windows.Controls;
 using TheHaveFunApp.ViewModels;
 
 namespace TheHaveFunApp.Views
@@ -17,6 +18,7 @@ namespace TheHaveFunApp.Views
         {
             InitializeComponent();
             this.DataContext = viewModel;
+            viewModel.UIContext = SynchronizationContext.Current;
         }
     }
 }

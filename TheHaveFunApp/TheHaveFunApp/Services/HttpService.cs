@@ -27,7 +27,7 @@ namespace TheHaveFunApp.Services
                 var response = RequestManager.GetResponse(request);
                 if (response.Exception == null)
                 {
-                    _servers = JsonConvert.DeserializeObject<List<ServerModel>>(response.Text);
+                    _servers = JsonConvert.DeserializeObject<List<ServerModel>>(response.Text);                    
                 }
                 else
                 {
@@ -39,13 +39,19 @@ namespace TheHaveFunApp.Services
                 throw new Exception("There was error in sending request", ex);
             }
 
+            //slow down execution
+            //for (int i = 0; i < 500000000; i++)
+            //{
+            //    var answer = i * i ;
+            //}
+
             return _servers;
         }
 
         public bool Login(string userName, string password)
         {
-            //userName = "tesonet";
-            //password = "partyanimal";
+            userName = "tesonet";
+            password = "partyanimal";
 
             var request = RequestBuilder.Create("default")
                 .SetUrl(UrlTokens)

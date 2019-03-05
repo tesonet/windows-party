@@ -1,12 +1,15 @@
-﻿using Prism.Commands;
+﻿using System;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using TheHaveFunApp.Collections;
 using TheHaveFunApp.Enums;
+using TheHaveFunApp.Helpers;
 using TheHaveFunApp.Models;
 using TheHaveFunApp.Services;
 
@@ -37,6 +40,8 @@ namespace TheHaveFunApp.ViewModels
         public ServersList Servers { get; private set; } = new ServersList();
         public DelegateCommand<string> SortCommand { get; }
 
+        public SynchronizationContext UIContext { get; set; }
+
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
@@ -54,12 +59,19 @@ namespace TheHaveFunApp.ViewModels
 
         private async void FetchServers()
         {
-            await Task.Delay(500);
-            Servers.Clear();
-            Servers.AddRange(_httpService.GetServersList());
+            using (new OverrideMouse())
+            {
+                Servers.Clear();
+                await Task.Run(() =>
+                {
+                    var list = _httpService.GetServersList();
+                    foreach (var item in list)
+                    {
+                        UIContext.Send(x => Servers.Add(item), null);
+                    }
+                });
+            }
         }
-
-
 
         private void Logout()
         {
@@ -70,7 +82,6 @@ namespace TheHaveFunApp.ViewModels
         private void Sort(string column)
         {
             Servers.SortByProperty(column);
-
             this.RaisePropertyChanged(nameof(Servers));
         }
     }
