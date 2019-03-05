@@ -151,13 +151,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Useful\TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\LoginBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Crypto\Internal\Salsa\replace regex.txt" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
