@@ -12,7 +12,10 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Image Source="../Images/LoginBackground.jpg" Stretch="UniformToFill" />
+        <Grid>
+            <Image Source="../Images/LoginBackground.jpg" Stretch="UniformToFill" />
+            <Rectangle Fill="Black" Opacity="0.6" />
+        </Grid>
         <StackPanel
             Width="300"
             MaxWidth="300"

@@ -153,7 +153,9 @@
   <ItemGroup>
     <Resource Include="Images\LoginBackground.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\LoggedInBackground.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\lock.svg" />
     <Resource Include="Images\user.svg" />
