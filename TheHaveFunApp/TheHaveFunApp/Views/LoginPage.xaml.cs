@@ -49,6 +49,6 @@ namespace TheHaveFunApp.Views
                 txtUserName.Visibility = System.Windows.Visibility.Visible;
                 entryUserName.Visibility = System.Windows.Visibility.Collapsed;
             }
-        }
+        }     
     }
 }

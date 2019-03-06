@@ -69,7 +69,7 @@
                         HorizontalContentAlignment="Stretch"
                         BorderThickness="0"
                         LostFocus="EntryUserName_LostFocus"
-                        Text="{Binding UserName}"
+                        Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"
                         Visibility="Collapsed" />
                 </Grid>
             </Border>
