@@ -92,9 +92,8 @@
     <Compile Include="Helpers\OverrideMouse.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Models\ServerModel.cs" />
-    <Compile Include="Models\Token.cs" />
     <Compile Include="Services\HttpService.cs" />
-    <Compile Include="Services\IHttpService.cs" />
+    <Compile Include="Services\Interfaces\IHttpService.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\ServersListPageViewModel.cs" />
     <Compile Include="Views\LoginPage.xaml.cs">

@@ -1,35 +1,24 @@
-﻿using System;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using TheHaveFunApp.Collections;
-using TheHaveFunApp.Enums;
 using TheHaveFunApp.Helpers;
-using TheHaveFunApp.Models;
-using TheHaveFunApp.Services;
+using TheHaveFunApp.Services.Interfaces;
 
 namespace TheHaveFunApp.ViewModels
 {
     public class ServersListPageViewModel : BindableBase, INavigationAware
     {
-
         private readonly IHttpService _httpService;
 
         private readonly IRegionManager _regionManager;
-
-
 
         public ServersListPageViewModel(IRegionManager regionManager, IHttpService httpService)
         {
             _regionManager = regionManager;
             _httpService = httpService;
-
-
 
             LogoutCommand = new DelegateCommand(Logout);
             SortCommand = new DelegateCommand<string>(Sort);

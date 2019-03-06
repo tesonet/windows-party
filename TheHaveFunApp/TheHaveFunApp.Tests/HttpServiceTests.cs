@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TheHaveFunApp.Services;
+using TheHaveFunApp.Services.Interfaces;
 
 namespace TheHaveFunApp.Tests
 {

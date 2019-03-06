@@ -1,10 +1,9 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
-using System;
 using System.Threading.Tasks;
 using TheHaveFunApp.Helpers;
-using TheHaveFunApp.Services;
+using TheHaveFunApp.Services.Interfaces;
 
 namespace TheHaveFunApp.ViewModels
 {
@@ -46,7 +45,6 @@ namespace TheHaveFunApp.ViewModels
 
         private bool CanLogin()
         {
-            return true;
             return !string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password);
         }
 

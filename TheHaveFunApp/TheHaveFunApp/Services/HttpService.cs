@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using Nx.Net;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using TheHaveFunApp.Services.Interfaces;
 using TheHaveFunApp.Models;
 
 namespace TheHaveFunApp.Services

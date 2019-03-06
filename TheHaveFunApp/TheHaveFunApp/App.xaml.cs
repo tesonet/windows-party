@@ -5,6 +5,7 @@ using Prism.Ioc;
 using Prism.Regions;
 using Prism.Unity;
 using TheHaveFunApp.Services;
+using TheHaveFunApp.Services.Interfaces;
 using TheHaveFunApp.ViewModels;
 using TheHaveFunApp.Views;
 

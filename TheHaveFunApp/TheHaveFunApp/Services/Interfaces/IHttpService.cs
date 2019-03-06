@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using TheHaveFunApp.Models;
 
-namespace TheHaveFunApp.Services
+namespace TheHaveFunApp.Services.Interfaces
 {
     public interface IHttpService
     {
