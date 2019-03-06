@@ -39,12 +39,6 @@ namespace TheHaveFunApp.Services
                 throw new Exception("There was error in sending request", ex);
             }
 
-            //slow down execution
-            //for (int i = 0; i < 500000000; i++)
-            //{
-            //    var answer = i * i ;
-            //}
-
             return _servers;
         }
 

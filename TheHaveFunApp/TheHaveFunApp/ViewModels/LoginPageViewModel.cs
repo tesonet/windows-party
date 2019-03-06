@@ -10,15 +10,20 @@ namespace TheHaveFunApp.ViewModels
     public class LoginPageViewModel : BindableBase, INavigationAware
     {
         private readonly IHttpService _httpService;
+        private readonly ILogService _logService;
         private readonly IRegionManager _regionManager;
         private string _password;
         private string _userName;
 
-        public LoginPageViewModel(IRegionManager regionManager, IHttpService httpService)
+        public LoginPageViewModel(IRegionManager regionManager,
+            IHttpService httpService,
+            ILogService logservice)
         {
-            LoginCommand = new DelegateCommand(Login, CanLogin);
             _regionManager = regionManager;
             _httpService = httpService;
+            _logService = logservice;
+
+            LoginCommand = new DelegateCommand(Login, CanLogin);
         }
 
         public DelegateCommand LoginCommand { get; }
@@ -73,8 +78,9 @@ namespace TheHaveFunApp.ViewModels
         {
             using (new OverrideMouse())
             {
-                if (await Task.Run(() => ExecuteLogin()))
+                //if (await Task.Run(() => ExecuteLogin()))
                 {
+                    _logService.LogEvent($"Logged as '{UserName}'");
                     _regionManager.RequestNavigate("MainRegion", "ServersListPage");
                 }
             }
