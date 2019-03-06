@@ -26,7 +26,7 @@ namespace TheHaveFunApp
             IRegionManager regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
             regionManager.AddToRegion("MainRegion", this.Container.Resolve<LoginPage>());
 
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            Current.DispatcherUnhandledException += Current_DispatcherUnhandledException;
         }
 
         protected override Window CreateShell()
@@ -51,17 +51,20 @@ namespace TheHaveFunApp
             this.Container.Resolve<ILogService>()?.Init(_log);
         }
 
-        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        private void Current_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             try
             {
-                var exception = e.ExceptionObject as Exception;
-                this.Container.Resolve<ILogService>()?.LogException(exception);
-                MessageBox.Show(exception.Message);
+                this.Container.Resolve<ILogService>()?.LogException(e.Exception);
+                MessageBox.Show(e.Exception.Message);
             }
             catch
             {
 
+            }
+            finally
+            {
+                e.Handled = true;
             }
         }
     }

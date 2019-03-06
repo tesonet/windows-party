@@ -31,12 +31,12 @@ namespace TheHaveFunApp.Services
                 }
                 else
                 {
-                    throw new Exception("There was error in sending request", response.Exception);
+                    throw new Exception("GetServersList: There was error in sending request", response.Exception);
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("There was error in sending request", ex);
+                throw new Exception("GetServersList: There was error in sending request", ex);
             }
 
             return _servers;
@@ -44,9 +44,6 @@ namespace TheHaveFunApp.Services
 
         public bool Login(string userName, string password)
         {
-            userName = "tesonet";
-            password = "partyanimal";
-
             var request = RequestBuilder.Create("default")
                 .SetUrl(UrlTokens)
                 .SetHttpMethod("POST")
@@ -65,12 +62,12 @@ namespace TheHaveFunApp.Services
                 }
                 else
                 {
-                    throw new Exception("There was error in sending request", response.Exception);
+                    throw new Exception("Login: There was error in sending request", response.Exception);
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("There was error in sending request", ex);
+                throw new Exception("Login: There was error in sending request", ex);
             }
         }
 

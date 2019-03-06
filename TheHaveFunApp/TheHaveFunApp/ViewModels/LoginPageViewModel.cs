@@ -61,7 +61,7 @@ namespace TheHaveFunApp.ViewModels
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-        
+
         }
 
         private bool CanLogin()
@@ -78,7 +78,7 @@ namespace TheHaveFunApp.ViewModels
         {
             using (new OverrideMouse())
             {
-                //if (await Task.Run(() => ExecuteLogin()))
+                if (await Task.Run(() => ExecuteLogin()))
                 {
                     _logService.LogEvent($"Logged as '{UserName}'");
                     _regionManager.RequestNavigate("MainRegion", "ServersListPage");
