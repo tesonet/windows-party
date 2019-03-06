@@ -7,7 +7,7 @@ using TheHaveFunApp.Services.Interfaces;
 
 namespace TheHaveFunApp.ViewModels
 {
-    public class LoginPageViewModel : BindableBase
+    public class LoginPageViewModel : BindableBase, INavigationAware
     {
         private readonly IHttpService _httpService;
         private readonly IRegionManager _regionManager;
@@ -28,7 +28,7 @@ namespace TheHaveFunApp.ViewModels
             get { return _password; }
             set
             {
-                _password = value;
+                this.SetProperty(ref _password, value);
                 this.LoginCommand.RaiseCanExecuteChanged();
             }
         }
@@ -38,9 +38,25 @@ namespace TheHaveFunApp.ViewModels
             get { return _userName; }
             set
             {
-                _userName = value;
+                this.SetProperty(ref _userName, value);
                 this.LoginCommand.RaiseCanExecuteChanged();
             }
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            this.UserName = string.Empty;
+            this.Password = string.Empty;
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+        
         }
 
         private bool CanLogin()
