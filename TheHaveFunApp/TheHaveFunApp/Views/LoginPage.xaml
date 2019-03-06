@@ -106,7 +106,7 @@
                         VerticalAlignment="Center"
                         HorizontalContentAlignment="Stretch"
                         helpers:PasswordHelper.Attach="True"
-                        helpers:PasswordHelper.Password="{Binding Password}"
+                        helpers:PasswordHelper.Password="{Binding Password, Mode=TwoWay}"
                         BorderThickness="0"
                         LostFocus="EntryPassword_LostFocus"
                         PasswordChar="*"
@@ -142,6 +142,9 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#86b300" />
                                 <Setter Property="Foreground" Value="#fff" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="LightGray" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
