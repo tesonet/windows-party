@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesonetWinParty", "TesonetWinParty\TesonetWinParty.csproj", "{E68C8711-B0D5-45EC-876B-674E55668E6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesonetWinParty.Tests", "TesonetWinParty.Tests\TesonetWinParty.Tests.csproj", "{A2BCF340-DB7C-47E4-8E89-1021025D7093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E68C8711-B0D5-45EC-876B-674E55668E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68C8711-B0D5-45EC-876B-674E55668E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68C8711-B0D5-45EC-876B-674E55668E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68C8711-B0D5-45EC-876B-674E55668E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BCF340-DB7C-47E4-8E89-1021025D7093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BCF340-DB7C-47E4-8E89-1021025D7093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BCF340-DB7C-47E4-8E89-1021025D7093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BCF340-DB7C-47E4-8E89-1021025D7093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CCC3454-E692-432F-98BB-ACD9EB0F0763}
+	EndGlobalSection
+EndGlobal

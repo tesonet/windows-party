@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="TesonetWinParty.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TesonetWinParty.Views"
+             xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+             mc:Ignorable="d" Background="{StaticResource colorLoginBackgroundMask}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush ImageSource="{StaticResource backgroundImage}" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="{StaticResource logoTestio}" Width="250" Margin="50"></Image>
+            <TextBlock x:Name="ErrorMessage" Width="300" Style="{StaticResource loginErrorMessage}" Text="This is an error message" Visibility="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"></TextBlock>
+            <Border Style="{StaticResource loginInputBorder}">
+            <toolkit:WatermarkTextBox x:Name="UserName" Style="{StaticResource loginInputTextBox}" Width="300" Height="40" >
+                <toolkit:WatermarkTextBox.Watermark>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Margin="5 0 0 0">
+                        <Image Source="{StaticResource iconUserName}" Width="15" Stretch="Uniform"/>
+                        <TextBlock Text="Username" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </toolkit:WatermarkTextBox.Watermark>
+            </toolkit:WatermarkTextBox>
+            </Border>
+            <Border Style="{StaticResource loginInputBorder}">
+                <toolkit:WatermarkPasswordBox x:Name="Password" Style="{StaticResource loginInputPasswordBox}" Width="300" Height="40">
+                <toolkit:WatermarkTextBox.Watermark>
+                    <StackPanel Orientation="Horizontal" Margin="5 0 0 0">
+                        <Image Source="{StaticResource iconPassword}" Width="15" Stretch="Uniform"/>
+                        <TextBlock Text="Password" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </toolkit:WatermarkTextBox.Watermark>
+            </toolkit:WatermarkPasswordBox>
+            </Border>
+            <Button Style="{StaticResource roundedButtonStyle}" Content="Log In" x:Name="LogIn" IsDefault="True"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

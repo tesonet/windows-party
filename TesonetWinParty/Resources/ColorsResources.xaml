@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TesonetWinParty.Resources">
+   
+    <SolidColorBrush x:Key="colorLoginBackground" Color="#9fd533"/>
+    <SolidColorBrush x:Key="colorLoginHover" Color="#86b300"/>
+    <SolidColorBrush x:Key="colorLogOutHover" Color="#99cc33"/>
+    <SolidColorBrush x:Key="colorLoginBackgroundMask" Color="#0b0f27"/>
+    <SolidColorBrush x:Key="colorServersGridBackground" Color="White"/>
+    <SolidColorBrush x:Key="colorDataGridHorizontalGridLine" Color="#e6e6e6"/>
+
+
+</ResourceDictionary>

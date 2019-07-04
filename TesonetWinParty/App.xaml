@@ -1,0 +1,18 @@
+﻿<Application x:Class="TesonetWinParty.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TesonetWinParty">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:Bootstrapper x:Key="bootstrapeer"/>
+                </ResourceDictionary>
+                <ResourceDictionary Source="Resources\ImageResources.xaml"/>
+                <ResourceDictionary Source="Resources\ColorsResources.xaml"/>
+                <ResourceDictionary Source="Resources\StylesResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
