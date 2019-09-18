@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="WindowsParty.Views.ServerListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsParty.Views"
+		xmlns:controls="clr-namespace:WindowsParty.Controls"
+		xmlns:cal="http://www.caliburnproject.org"
+		mc:Ignorable="d"
+		Height="780" Width="1460">
+	<Grid Height="780" Width="1460">
+		<StackPanel Margin="50" Orientation="Horizontal">
+			<Image Source="pack://application:,,/Resources/logotype_testio_dark.png" Stretch="None" HorizontalAlignment="Left"/>
+			<Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" />
+		</StackPanel>
+		<StackPanel Style="{StaticResource ControlsArea}">
+		</StackPanel>
+	</Grid>
+</UserControl>
