@@ -1,14 +1,26 @@
 ﻿using Caliburn.Micro;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security;
+using WindowsParty.Handlers.Contracts;
 
 namespace WindowsParty.ViewModels
 {
 	public class LoginViewModel : Screen
 	{
+		#region Constructors
+
+		public LoginViewModel(ILoginHandler loginHandler)
+		{
+			this.loginHandler = loginHandler;
+		}
+
+		#endregion
+
+		#region Properties
+
+		private ILoginHandler loginHandler;
+
+		#endregion
+
 		#region Fields
 
 		public string Username { get; set; }
@@ -20,8 +32,13 @@ namespace WindowsParty.ViewModels
 
 		public void Login()
 		{
-			var shellVM = (this.Parent as ShellViewModel);
-			shellVM.Login();
+			var shellVM = this.Parent as ShellViewModel;
+			shellVM.IsBusy = true;
+			App.Current.Dispatcher.Invoke(() =>
+			{
+				loginHandler.Login(Username, Password).Wait();
+				shellVM.NavigateToServersList();
+			});
 		}
 
 		#endregion

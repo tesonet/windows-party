@@ -8,11 +8,18 @@
 		xmlns:cal="http://www.caliburnproject.org"
 		mc:Ignorable="d"
 		Height="780" Width="1460">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,/Styles/LoginScreenStyles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
 	<Grid Height="780" Width="1460" Background="{StaticResource LoginBackgroundPaint}">
 		<StackPanel Style="{StaticResource ControlsArea}">
 			<Image Style="{StaticResource LogoImage}"/>
-			<controls:UsernameInput/>
-			<controls:PasswordInput Margin="0, 20, 0, 0"/>
+			<controls:UsernameInput Username="{Binding Username}"/>
+			<controls:PasswordInput PasswordValue="{Binding Password, Mode=TwoWay}" Margin="0, 20, 0, 0"/>
 			<Button x:Name="Login" Content="Log in"  Style="{StaticResource LoginButton}" cal:Message.Attach="Login"/>
 		</StackPanel>
 	</Grid>

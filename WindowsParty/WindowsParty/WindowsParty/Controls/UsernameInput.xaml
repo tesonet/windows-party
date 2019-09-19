@@ -50,7 +50,7 @@
 	</UserControl.Style>
 
 	<Grid>
-		<TextBox x:Name="UsernameTextBox"/>
+		<TextBox x:Name="UsernameTextBox" Text="{Binding Username}"/>
 		<Image	Margin="20,5,5,5" 
 				Source="pack://application:,,/Resources/ico-username.png" 
 				HorizontalAlignment="Left"

@@ -8,12 +8,59 @@
 		xmlns:cal="http://www.caliburnproject.org"
 		mc:Ignorable="d"
 		Height="780" Width="1460">
-	<Grid Height="780" Width="1460">
-		<StackPanel Margin="50" Orientation="Horizontal">
-			<Image Source="pack://application:,,/Resources/logotype_testio_dark.png" Stretch="None" HorizontalAlignment="Left"/>
-			<Button x:Name="Logout" Content="Logout" HorizontalAlignment="Right" />
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,/Styles/ServerListScreenStyles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid Height="780" Width="1460" Style="{StaticResource MainGrid}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*" />
+			<ColumnDefinition Width="1*" />
+		</Grid.ColumnDefinitions>
+		<StackPanel  Grid.Column="0">
+			<StackPanel Style="{StaticResource HeaderLine}">
+				<Image Source="pack://application:,,/Resources/logotype_testio_dark.png" Stretch="None" HorizontalAlignment="Left"/>
+			</StackPanel>
+
+			<Grid>
+				<ListView Margin="10" Name="ServersList" ItemsSource="{Binding Servers}">
+					<ListView.View>
+						<GridView >
+							<GridViewColumn Header="SERVER" Width="600" DisplayMemberBinding="{Binding Name}" >
+								<GridViewColumn.HeaderContainerStyle>
+									<Style TargetType="{x:Type GridViewColumnHeader}">
+										<Setter Property="HorizontalContentAlignment" Value="Left" />
+									</Style>
+								</GridViewColumn.HeaderContainerStyle>
+							</GridViewColumn>
+							<GridViewColumn Header="DISTANCE" Width="100"  DisplayMemberBinding="{Binding Distance}" />
+						</GridView>
+					</ListView.View>
+				</ListView>
+			</Grid>
 		</StackPanel>
-		<StackPanel Style="{StaticResource ControlsArea}">
+
+		<StackPanel  Grid.Column="1">
+			<StackPanel Style="{StaticResource HeaderLine}" HorizontalAlignment="Right">
+				<Button x:Name="Logout" Content="Logout" />
+			</StackPanel>
+			<Grid Style="{StaticResource ImageGrid}">
+				<Image Style="{StaticResource ServerListRightImage}"/>
+				<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+					<TextBlock Text=".NET Developer Task" Style="{StaticResource BigText}"></TextBlock>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+						<TextBlock Text="by" Style="{StaticResource SmallText}" ></TextBlock>
+						<Image Style="{StaticResource SmallLogo}"/>
+					</StackPanel>
+				</StackPanel>
+			</Grid>
+			
+
 		</StackPanel>
+
 	</Grid>
 </UserControl>
