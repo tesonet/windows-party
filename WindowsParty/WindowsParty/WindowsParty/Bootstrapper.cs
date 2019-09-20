@@ -73,7 +73,7 @@ namespace WindowsParty
 			e.Handled = true;
 			var ex = e.Exception;
 			while (ex.InnerException != null) ex = ex.InnerException;
-			MessageBox.Show(ex.Message, "An error as occurred", MessageBoxButton.OK);
+			MessageBox.Show(ex.Message, "An error as occurred", MessageBoxButton.OK, MessageBoxImage.Error);
 		}
 
 		#endregion

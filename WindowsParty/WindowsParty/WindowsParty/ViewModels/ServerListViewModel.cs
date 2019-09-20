@@ -1,10 +1,7 @@
 ﻿using Caliburn.Micro;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using WindowsParty.Constants;
 using WindowsParty.Handlers.Contracts;
 using WindowsParty.Models;
 
@@ -16,15 +13,18 @@ namespace WindowsParty.ViewModels
 
 		public ObservableCollection<Server> Servers { get; set; }
 		private IServersHandler serversHandler;
+		private IEventAggregator eventAggregator;
 
 		#endregion
 
 		#region Constructors
 
-		public ServerListViewModel(IServersHandler serversHandler)
+		public ServerListViewModel(IServersHandler serversHandler,
+								   IEventAggregator eventAggregator)
 		{
 			this.serversHandler = serversHandler;
-			Servers = new ObservableCollection<Server>();
+			this.eventAggregator = eventAggregator;
+			Servers = new ObservableCollection<Server>();			
 		}
 
 		#endregion
@@ -43,6 +43,12 @@ namespace WindowsParty.ViewModels
 			Servers.Clear();
 			foreach (var server in serversList)
 				Servers.Add(server);
+		}
+		
+		public async Task LogoutAsync()
+		{
+			App.Current.Properties.Remove(DefaultValues.TOKEN);
+			await eventAggregator.PublishOnUIThreadAsync(typeof(LoginViewModel));
 		}
 
 		#endregion

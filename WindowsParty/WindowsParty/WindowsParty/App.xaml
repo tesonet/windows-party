@@ -9,6 +9,7 @@
 				<ResourceDictionary>
 					<local:Bootstrapper x:Key="bootstrapper" />
 				</ResourceDictionary>
+				<ResourceDictionary Source="pack://application:,,/Styles/ScrollBarStyles.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>

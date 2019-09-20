@@ -23,10 +23,15 @@ namespace WindowsParty.Handlers
 
 		#region Methods
 
-		public async Task Login(string username, string password)
+		public async Task<bool> Login(string username, string password)
 		{
 			var token = await Post<LoginResponse>(new Login() { Username = username, Password = password });
+			if (token == null)
+				return false;
+
 			App.Current.Properties[DefaultValues.TOKEN] = token.Token;
+
+			return true;
 		}
 
 		#endregion

@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:fa="http://schemas.fontawesome.io/icons/"
 		mc:Ignorable="d"
-		Height="780" Width="1460">
+		Height="780" Width="1460"
+		ResizeMode="NoResize"
+		Title="Windows Party">
 	<Grid>
 		<ContentControl x:Name="ActiveItem" />
-		<fa:ImageAwesome Icon="Spinner" Spin="True" Visibility="{Binding BusyVisibility}" Height="48" Width="48" />
 	</Grid>
 </Window>

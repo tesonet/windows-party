@@ -49,9 +49,17 @@ namespace WindowsParty.Handlers
 
 		protected async Task<T> Post<T>(object body) where T : class, new()
 		{
-			var response = client.PostAsJsonAsync(Endpoint, body).Result;
-			response.EnsureSuccessStatusCode();
-			return await response.Content.ReadAsAsync<T>();
+			try
+			{
+				var response = client.PostAsJsonAsync(Endpoint, body).Result;
+				if (!response.IsSuccessStatusCode)
+					return null;
+				return await response.Content.ReadAsAsync<T>();
+			}
+			catch
+			{
+				return null;
+			}
 		}
 
 		protected async Task<IEnumerable<T>> Get<T>() where T : class, new()

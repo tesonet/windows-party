@@ -46,6 +46,8 @@ namespace WindowsParty.Controls
 			set
 			{
 				this.SetValue(PasswordProperty, value);
+				if (PasswordText.Password != value)
+					PasswordText.Password = value;
 			}
 		}
 

@@ -4,6 +4,6 @@ namespace WindowsParty.Handlers.Contracts
 {
 	public interface ILoginHandler
 	{
-		Task Login(string username, string password);
+		Task<bool> Login(string username, string password);
 	}
 }
