@@ -50,8 +50,8 @@ namespace WindowsParty.Tests.ViewModels
 			loginVM.Object.Password = "test";
 			await loginVM.Object.LoginAsync();
 
-			Assert.AreEqual(DefaultValues.LOGIN_FAILED_TITLE, errorTitle);
-			Assert.AreEqual(DefaultValues.LOGIN_FAILED_TEXT, errorMessage);
+			Assert.AreEqual(null, errorTitle);
+			Assert.AreEqual(null, errorMessage);
 		}
 
 		#endregion
@@ -75,9 +75,8 @@ namespace WindowsParty.Tests.ViewModels
 					return true;
 				return false;
 			});
-			
+
 			var eventAggregatorMock = new Mock<IEventAggregator>();
-			eventAggregatorMock.Setup(ea => ea.PublishOnUIThreadAsync(It.IsAny<Type>())).Returns(Task.CompletedTask);
 
 			loginVM = new Mock<LoginViewModel>(loginHandlerMock.Object, eventAggregatorMock.Object) { CallBase = true };
 			loginVM.Setup(lvm => lvm.ShowMessage(It.IsAny<string>(), It.IsAny<string>())).Callback<string, string>((message, title) =>
@@ -85,6 +84,7 @@ namespace WindowsParty.Tests.ViewModels
 				errorTitle = title;
 				errorMessage = message;
 			});
+			loginVM.Setup(lvm => lvm.NavigateToServerListScreen()).Returns(Task.CompletedTask);
 		}
 
 		#endregion

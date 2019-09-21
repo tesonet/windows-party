@@ -37,7 +37,7 @@ namespace WindowsParty.ViewModels
 			UpdateServers();
 		}
 
-		private async Task UpdateServers()
+		public async Task UpdateServers()
 		{
 			var serversList = await serversHandler.GetServers();
 			Servers.Clear();
@@ -47,6 +47,7 @@ namespace WindowsParty.ViewModels
 		
 		public async Task LogoutAsync()
 		{
+			Servers.Clear();
 			App.Current.Properties.Remove(DefaultValues.TOKEN);
 			await eventAggregator.PublishOnUIThreadAsync(typeof(LoginViewModel));
 		}

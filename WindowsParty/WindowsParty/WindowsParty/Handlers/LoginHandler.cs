@@ -13,14 +13,6 @@ namespace WindowsParty.Handlers
 
 		#endregion
 
-		#region Constructors
-
-		public LoginHandler(SimpleContainer container)
-			: base(container)
-		{ }
-
-		#endregion
-
 		#region Methods
 
 		public async Task<bool> Login(string username, string password)

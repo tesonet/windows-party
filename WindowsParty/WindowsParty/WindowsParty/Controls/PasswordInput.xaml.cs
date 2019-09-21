@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WindowsParty.Controls
 {
@@ -33,8 +20,7 @@ namespace WindowsParty.Controls
 
 		#region Properties
 
-		public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("PasswordValue", typeof(string), typeof(PasswordInput)
-			, new PropertyMetadata(default(string)));
+		public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("PasswordValue", typeof(string), typeof(PasswordInput), new PropertyMetadata(default(string)));
 
 		[Bindable(true)]
 		public string PasswordValue

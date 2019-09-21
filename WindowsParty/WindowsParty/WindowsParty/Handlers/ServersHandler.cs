@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Caliburn.Micro;
 using WindowsParty.Handlers.Contracts;
 using WindowsParty.Models;
 
@@ -14,14 +10,6 @@ namespace WindowsParty.Handlers
 		#region Properties
 
 		protected override string Endpoint => "servers";
-
-		#endregion
-
-		#region Constructors
-
-		public ServersHandler(SimpleContainer container) : base(container)
-		{
-		}
 
 		#endregion
 

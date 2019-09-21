@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Threading;
+using WindowsParty.Constants;
 using WindowsParty.Handlers;
 using WindowsParty.Handlers.Contracts;
+using WindowsParty.Helpers;
 using WindowsParty.ViewModels;
 
 namespace WindowsParty
@@ -55,7 +57,7 @@ namespace WindowsParty
 			var instance = container.GetInstance(service, key);
 			if (instance != null)
 				return instance;
-			throw new InvalidOperationException("Could not locate any instances.");
+			throw new InvalidOperationException(DefaultValues.ERROR_INSTANCES_LOAD_FAIL);
 		}
 
 		protected override IEnumerable<object> GetAllInstances(Type service)
@@ -71,9 +73,7 @@ namespace WindowsParty
 		protected override void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
 		{
 			e.Handled = true;
-			var ex = e.Exception;
-			while (ex.InnerException != null) ex = ex.InnerException;
-			MessageBox.Show(ex.Message, "An error as occurred", MessageBoxButton.OK, MessageBoxImage.Error);
+			MessageViewer.ShowError(e.Exception);
 		}
 
 		#endregion

@@ -15,5 +15,14 @@ namespace WindowsParty.Views
 		}
 
 		#endregion
+
+		#region Methods
+
+		public void ClearPassword()
+		{
+			PasswordBox.PasswordValue = string.Empty;
+		}
+
+		#endregion
 	}
 }

@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WindowsParty.Constants;
 
 namespace WindowsParty.Handlers
@@ -15,7 +16,6 @@ namespace WindowsParty.Handlers
 	{
 		#region Properties
 
-		protected SimpleContainer Container { get; private set; }
 		private HttpClient client = new HttpClient();
 
 		#endregion
@@ -28,9 +28,8 @@ namespace WindowsParty.Handlers
 
 		#region Constructors
 
-		public HandlerBase(SimpleContainer container)
+		public HandlerBase()
 		{
-			Container = container;
 			Initialize();
 		}
 
@@ -49,17 +48,10 @@ namespace WindowsParty.Handlers
 
 		protected async Task<T> Post<T>(object body) where T : class, new()
 		{
-			try
-			{
-				var response = client.PostAsJsonAsync(Endpoint, body).Result;
-				if (!response.IsSuccessStatusCode)
-					return null;
-				return await response.Content.ReadAsAsync<T>();
-			}
-			catch
-			{
+			var response = client.PostAsJsonAsync(Endpoint, body).Result;
+			if (!response.IsSuccessStatusCode)
 				return null;
-			}
+			return await response.Content.ReadAsAsync<T>();
 		}
 
 		protected async Task<IEnumerable<T>> Get<T>() where T : class, new()

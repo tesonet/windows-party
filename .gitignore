@@ -4,5 +4,7 @@
 
 /WindowsParty/WindowsParty/.vs/WindowsParty/v16
 /WindowsParty/WindowsParty/packages
-/WindowsParty/WindowsParty/WindowsParty/bin/Debug
-/WindowsParty/WindowsParty/WindowsParty/obj/Debug
+/WindowsParty/WindowsParty/WindowsParty/bin
+/WindowsParty/WindowsParty/WindowsParty/obj
+/WindowsParty/WindowsParty/WindowsParty.Tests/bin
+/WindowsParty/WindowsParty/WindowsParty.Tests/obj

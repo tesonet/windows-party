@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security;
 using System.Threading.Tasks;
-using System.Windows;
 using WindowsParty.Constants;
 using WindowsParty.Handlers.Contracts;
+using WindowsParty.Helpers;
+using WindowsParty.Views;
 
 namespace WindowsParty.ViewModels
 {
@@ -41,19 +41,44 @@ namespace WindowsParty.ViewModels
 
 		public async Task LoginAsync()
 		{
-			if (!Validate())
-				return;
-			var isLoginSuccess = await loginHandler.Login(Username, Password);
-			if (isLoginSuccess)
-				await eventAggregator.PublishOnUIThreadAsync(typeof(ServerListViewModel));
-			else
+			try
 			{
-				ShowMessage(DefaultValues.LOGIN_FAILED_TEXT, DefaultValues.LOGIN_FAILED_TITLE);
-				Username = "";
-				Password = "";
-				NotifyOfPropertyChange(() => Username);
-				NotifyOfPropertyChange(() => Password);
+				if (!Validate())
+					return;
+				var isLoginSuccess = await loginHandler.Login(Username, Password);
+				if (isLoginSuccess)
+					await NavigateToServerListScreen();
+				else
+				{
+					ShowMessage(DefaultValues.LOGIN_FAILED_TEXT, DefaultValues.LOGIN_FAILED_TITLE);
+					ClearCredentials();
+				}
 			}
+			catch (Exception ex)
+			{
+				MessageViewer.ShowError(ex);
+			}
+		}
+
+		private void ClearCredentials()
+		{
+			Username = "";
+			Password = "";
+
+			NotifyOfPropertyChange(() => Username);
+
+			var view = (this.GetView() as LoginView);
+			view?.ClearPassword();
+		}
+
+		/// <summary>
+		/// We can't mock method `IEventAggregator.PublishOnUiThreadAsync`, so we need this one for 
+		/// overriding during testing.
+		/// </summary>
+		/// <returns></returns>
+		public virtual async Task NavigateToServerListScreen()
+		{
+			await eventAggregator.PublishOnUIThreadAsync(typeof(ServerListViewModel));
 		}
 
 		private bool Validate()
@@ -76,7 +101,7 @@ namespace WindowsParty.ViewModels
 
 		public virtual void ShowMessage(string message, string title)
 		{
-			MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Error);
+			MessageViewer.ShowError(message, title);
 		}
 
 		#endregion
