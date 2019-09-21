@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="WindowsParty.Views.ServerListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+        d:DesignHeight="780" d:DesignWidth="1460"
+        Height="Auto" Width="Auto">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,/Styles/ServerListScreenStyles.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	
+	<Grid Style="{StaticResource MainGrid}">
+		
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*" />
+			<ColumnDefinition Width="1*" />
+		</Grid.ColumnDefinitions>
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="130" />
+			<RowDefinition Height="650" />
+		</Grid.RowDefinitions>
+		
+		<StackPanel Style="{StaticResource HeaderLine}"  Grid.Column="0" Grid.Row="0">
+			<Image Source="pack://application:,,/Resources/logotype_testio_dark.png" Stretch="None" HorizontalAlignment="Left"/>
+		</StackPanel>
+		
+		<ListView Name="ServersList" 
+				  ItemsSource="{Binding Servers}" 
+				  BorderThickness="0"						  
+				  ItemContainerStyle="{StaticResource ListViewItemStyle}"
+				  HorizontalContentAlignment="Stretch"
+				  VerticalContentAlignment="Stretch"
+				  Height="620"
+				  Grid.Column="0" 
+				  Grid.Row="1" Margin="0,0,0,30" VerticalAlignment="Bottom">
+			<ListView.View>
+				<GridView ScrollViewer.VerticalScrollBarVisibility="Auto"
+						  ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+					<GridViewColumn HeaderContainerStyle="{StaticResource GridHeaderLeft}"
+									Header="SERVER"
+									Width="500">
+						<GridViewColumn.CellTemplate>
+							<DataTemplate>
+								<TextBox x:Name="ServerName" 
+										 Text="{Binding Name}" 
+										 Style="{StaticResource ServersListCell}" />
+							</DataTemplate>
+						</GridViewColumn.CellTemplate>
+					</GridViewColumn>
+
+					<GridViewColumn Header="DISTANCE"
+									HeaderContainerStyle="{ StaticResource GridHeaderRight}">
+						<GridViewColumn.CellTemplate>
+							<DataTemplate>
+								<TextBox x:Name="Distance" 
+											Text="{Binding Distance, StringFormat={}{0} km}" 
+											Style="{StaticResource ServersListCell}"
+											HorizontalContentAlignment="Right"
+											HorizontalAlignment="Right"
+											Width="195"/>
+							</DataTemplate>
+						</GridViewColumn.CellTemplate>
+					</GridViewColumn>
+				</GridView>
+			</ListView.View>
+		</ListView>
+
+		<StackPanel  Grid.Column="1" Grid.Row="0">
+			<StackPanel Style="{StaticResource HeaderLine}" HorizontalAlignment="Right">
+				<Button x:Name="LogoutAsync" Content="Logout" Style="{StaticResource LogoutButton}" />
+			</StackPanel>
+		</StackPanel>
+
+		<StackPanel  Grid.Column="1" Grid.Row="1">
+			<Grid Style="{StaticResource ImageGrid}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+				<Image Style="{StaticResource ServerListRightImage}" Stretch="Fill"/>
+				<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+					<TextBlock Text=".NET Developer Task" Style="{StaticResource BigText}"></TextBlock>
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+						<TextBlock Text="by" Style="{StaticResource SmallText}" ></TextBlock>
+						<Image Style="{StaticResource SmallLogo}"/>
+					</StackPanel>
+				</StackPanel>
+			</Grid>
+			
+
+		</StackPanel>
+
+	</Grid>
+</UserControl>
