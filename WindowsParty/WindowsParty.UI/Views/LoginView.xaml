@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow x:Class="WindowsParty.UI.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:WindowsParty.UI.Views"
+        mc:Ignorable="d"
+        Title="LoginView" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 Text="{Binding UserName}" Width="200"></TextBox>
+        <PasswordBox Grid.Row="3" Grid.Column="1" x:Name="txtPassword" Width="200"/>
+        <Button Grid.Row="5" Grid.Column="1" Width="200"
+                Command="{Binding Login}" CommandParameter="{Binding ElementName=txtPassword}">Login</Button>
+        <Label Grid.Row="7" Grid.Column="1" Width="200" Content="{Binding Error}"></Label>
+
+    </Grid>
+</Controls:MetroWindow>
