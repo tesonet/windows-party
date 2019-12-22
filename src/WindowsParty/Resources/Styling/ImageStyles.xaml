@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WindowsParty.Resources.Styling">
+
+    <BitmapImage x:Key="Background" UriSource="/Resources/Images/bg.png" />
+    <BitmapImage x:Key="Logotype" UriSource="/Resources/Images/logotype-testio.png" />
+    <BitmapImage x:Key="Logotype_Dark" UriSource="/Resources/Images/logotype-testio-dark.png" />
+    <BitmapImage x:Key="LogOutIcon" UriSource="/Resources/Images/ico-logout.png" />
+    <BitmapImage x:Key="Background-ServerList" UriSource="/Resources/Images/bg-serverlist.png" />
+    
+</ResourceDictionary>

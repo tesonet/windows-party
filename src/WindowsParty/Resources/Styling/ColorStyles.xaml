@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WindowsParty.Resources.Styling">
+
+    <SolidColorBrush x:Key="BackgroundColor" Color="#0b0f27"/>
+    <SolidColorBrush x:Key="ServerListBackgroundColor" Color="#ffffff"/>
+    <SolidColorBrush x:Key="ErrorTextColor" Color="#FFF02727"/>
+    <SolidColorBrush x:Key="ActionButtonNoHover" Color="#9fd533"/>
+    <SolidColorBrush x:Key="ActionButtonHover" Color="#86b300"/>
+    <SolidColorBrush x:Key="ActionButtonTextColor" Color="#ffffff"/>
+    <SolidColorBrush x:Key="LogOutHover" Color="#99cc33"/>
+    <SolidColorBrush x:Key="ServerListTitleColor" Color="#ffffff"/>
+    <SolidColorBrush x:Key="ListHeaderBackgroundColor" Color="#f5f5f5"/>
+    <SolidColorBrush x:Key="ListHeaderBorderColor" Color="#e6e6e6"/>
+    <SolidColorBrush x:Key="ListHeaderTextColor" Color="#999999"/>
+
+</ResourceDictionary>
