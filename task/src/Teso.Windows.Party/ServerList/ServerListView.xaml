@@ -1,0 +1,68 @@
+﻿<UserControl  x:Class="Teso.Windows.Party.ServerList.ServerListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignHeight="780" d:DesignWidth="1460"
+        xmlns:cal="http://www.caliburnproject.org">
+    <Grid  Background="{StaticResource DefaultForeground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="500" />
+            <ColumnDefinition Width="*" MinWidth="500" />
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="1" x:Name="Logout" Style="{StaticResource LogoutButton}"/>
+        <Image Grid.Row="0" Grid.Column="0" Source="{StaticResource DarkLogo}" HorizontalAlignment="Left" Margin="40" Stretch="None"/>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="{StaticResource DefaultBackground}">
+            <Image Source="{StaticResource ServerListImage}" Stretch="UniformToFill" />
+            <Grid VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text=".NET Developer Task" FontFamily="{DynamicResource DefaultFont}" FontWeight="Light" FontSize="48" Foreground="{StaticResource DefaultForeground}" Margin="30"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="by" FontFamily="{DynamicResource DefaultFont}" FontWeight="Light" FontSize="20" Foreground="{StaticResource DefaultForeground}" Margin="5"/>
+                        <Image Source="{StaticResource Logo}" Height="17" Width="67" Stretch="UniformToFill" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderThickness="0,1,0,1" BorderBrush="{StaticResource ListBorder}" Grid.Row="0" Background="{StaticResource ListHeaderBackground}">
+                <Grid HorizontalAlignment="Stretch" Margin ="40,20,40,20">
+                    <TextBlock Text="NAME" HorizontalAlignment="Left" Style="{StaticResource ListViewText}"/>
+                    <TextBlock Text="DISTANCE" HorizontalAlignment="Right" Style="{StaticResource ListViewText}" />
+                </Grid>
+            </Border>
+
+            <ListView Grid.Row="1" Name="Servers" HorizontalContentAlignment="Stretch" BorderThickness="0">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="0,1,0,0" BorderBrush="{StaticResource ListBorder}">
+                            <Grid HorizontalAlignment="Stretch" Margin ="40,20,40,20">
+                                <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" Style="{StaticResource ListViewText}"/>
+                                <TextBlock Text="{Binding Distance}" HorizontalAlignment="Right" Style="{StaticResource ListViewText}" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</UserControl>
