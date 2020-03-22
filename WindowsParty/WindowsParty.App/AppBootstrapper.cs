@@ -69,6 +69,7 @@ namespace WindowsParty.App
 
         //protected override void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         //{
+        // TODO: logging should go here
         //    throw new NotImplementedException();
 
         //    //e.Handled = true;

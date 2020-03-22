@@ -79,9 +79,6 @@
     <Compile Include="Data\HttpDataProvider.cs" />
     <Compile Include="Interfaces\IDataService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
-    <Compile Include="ILogin.cs" />
-    <Compile Include="IServers.cs" />
-    <Compile Include="IShell.cs" />
     <Compile Include="Models\V1\Bearer.cs" />
     <Compile Include="Models\V1\Server.cs" />
     <Compile Include="Services\ServersDataService.cs" />
