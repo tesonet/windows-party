@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="WindowsParty.App.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
+             mc:Ignorable="d"
+             Height="760" 
+             Width="1460">
+    <Grid>
+        <Grid HorizontalAlignment="Center" 
+              VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="55"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Assets/tesonet.png" 
+                   Grid.Column="0" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="2" 
+                   Height="40" 
+                   Margin="0,0,0,15"/>
+
+            <Border Grid.Column="0" 
+                    Grid.Row="1" 
+                    Grid.ColumnSpan="2" 
+                    Background="White" 
+                    Height="40"
+                    CornerRadius="5"/>
+            <Image Source="/Assets/username.png"
+                   Grid.Column="0" 
+                   Grid.Row="1"
+                   Width="25"
+                   Height="25"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <TextBox Grid.Column="1" 
+                     Grid.Row="1" 
+                     Height="40" 
+                     VerticalContentAlignment="Center" 
+                     Name="Username"/>
+
+            <Border Grid.Column="0" 
+                    Grid.Row="2" 
+                    Grid.ColumnSpan="2" 
+                    Background="White" 
+                    Height="40"
+                    CornerRadius="5"/>
+            <Image Source="/Assets/password.png"
+                   Grid.Column="0" 
+                   Grid.Row="2"
+                   Width="25"
+                   Height="25"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <PasswordBox Grid.Column="1" 
+                         Grid.Row="2" 
+                         Height="40" 
+                         VerticalContentAlignment="Center" 
+                         Name="Password"/>
+
+            <Button Grid.Column="0" 
+                    Grid.Row="3" 
+                    Grid.ColumnSpan="2" 
+                    Height="40" 
+                    Content="Log In" 
+                    Background="#86b300" 
+                    Foreground="White" 
+                    TextBlock.FontWeight="Bold" 
+                    cal:Message.Attach="Login" 
+                    BorderBrush="Transparent">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/mypicture.jpg" 
+                        Stretch="UniformToFill" />
+        </Grid.Background>
+    </Grid>
+</UserControl>
