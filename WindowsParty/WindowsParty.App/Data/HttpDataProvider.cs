@@ -13,11 +13,10 @@ namespace WindowsParty.App.Data
         private readonly HttpDataConfiguration _httpDataConfiguration;
         private readonly Uri _baseUri;
 
-        protected HttpDataProvider(
-            HttpClient httpClient,
-            HttpDataConfiguration httpDataConfiguration)
+        protected HttpDataProvider(HttpDataConfiguration httpDataConfiguration)
         {
-            _httpClient = httpClient;
+            _httpClient = new HttpClient();
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _httpDataConfiguration = httpDataConfiguration;
             _baseUri = new Uri(_httpDataConfiguration.ApiUrlBase);
         }

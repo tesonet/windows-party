@@ -10,10 +10,8 @@ namespace WindowsParty.App.Services
 {
     public class UserService : HttpDataProvider, IUserService
     {
-        public UserService(
-            HttpClient httpClient, 
-            HttpDataConfiguration httpDataConfiguration) 
-            : base(httpClient, httpDataConfiguration)
+        public UserService(HttpDataConfiguration httpDataConfiguration) 
+            : base(httpDataConfiguration)
         { }
 
         public async Task<Bearer> GetToken(string username, string password)

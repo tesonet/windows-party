@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using Caliburn.Micro;
 using WindowsParty.App.Configurations;
 using WindowsParty.App.Interfaces;
@@ -33,8 +31,8 @@ namespace WindowsParty.App
             _container.PerRequest<ServerViewModel>();
             _container.PerRequest<DashboardViewModel>();
 
-            _container.PerRequest<IUserService, UserService>();
-            _container.PerRequest<IServersDataService, ServersDataService>();
+            _container.Singleton<IUserService, UserService>();
+            _container.Singleton<IServersDataService, ServersDataService>();
 
             var apiConfiguration = new HttpDataConfiguration()
             {
@@ -42,9 +40,6 @@ namespace WindowsParty.App
                 Version = ConfigurationManager.AppSettings[nameof(HttpDataConfiguration.Version)] ?? throw new ArgumentNullException(nameof(HttpDataConfiguration.Version))
             };
             _container.Instance(apiConfiguration);
-            var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            _container.Instance(httpClient);
         }
 
         protected override object GetInstance(Type service, string key)

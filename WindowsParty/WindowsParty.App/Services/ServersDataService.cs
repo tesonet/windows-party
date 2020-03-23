@@ -10,10 +10,8 @@ namespace WindowsParty.App.Services
 {
     public class ServersDataService : HttpDataProvider, IServersDataService
     {
-        public ServersDataService(
-            HttpClient httpClient,
-            HttpDataConfiguration httpDataConfiguration)
-            : base(httpClient, httpDataConfiguration)
+        public ServersDataService(HttpDataConfiguration httpDataConfiguration)
+            : base(httpDataConfiguration)
         { }
 
         public async Task<IEnumerable<Server>> GetServers()
