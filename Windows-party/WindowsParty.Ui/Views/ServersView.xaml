@@ -1,0 +1,102 @@
+﻿<Page x:Class="WindowsParty.Ui.Views.ServersView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:converters="clr-namespace:WindowsParty.Ui.Converters"
+      mc:Ignorable="d"
+      Title="Servers"
+      d:DesignHeight="780"
+      d:DesignWidth="1460"
+      DataContext="{Binding Source={StaticResource Locator}, Path=ServersViewModel}">
+    <Page.Background>
+        <ImageBrush ImageSource="/WindowsParty.Ui;component/Assets/bg_servers.png" Stretch="UniformToFill" />
+    </Page.Background>
+    <Page.Resources>
+        <converters:DistanceToKilometersConverter x:Key="DistanceToKilometersConverter" />
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Height="112" Background="White" Padding="50,0,0,0">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Source="/WindowsParty.Ui;component/Assets/logo_dark.png" Stretch="None"></Image>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1" Height="112" Background="White" Padding="0,0,50,0">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Style="{DynamicResource LogOffButton}"
+                        Command="{Binding LogOffCommand}"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Style="{DynamicResource ListHeader}" Grid.Row="0" Height="56">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Style="{DynamicResource HeaderLabel}" Padding="50,0" HorizontalAlignment="Left" Grid.Column="0">SERVER</Label>
+                        <Label Style="{DynamicResource HeaderLabel}" Padding="0,0,70,0" HorizontalAlignment="Right" Grid.Column="1">DISTANCE</Label>
+                    </Grid>
+                </Border>
+                <ListBox Name="ReceiptLinesContainer" 
+                         Grid.Row="1"
+                         IsSynchronizedWithCurrentItem="False" 
+                         HorizontalContentAlignment="Stretch"
+                         ItemsSource="{Binding Servers}"
+                         BorderThickness="0,0,0,0"
+                         BorderBrush="Transparent">
+                    <ListBox.Resources>
+                        <Style TargetType="ListBoxItem">
+                            <Style.Resources>
+                                <!-- SelectedItem with focus -->
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                                 Color="Transparent" />
+                                <!-- SelectedItem without focus -->
+                                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}"
+                                                 Color="Transparent" />
+                                <!-- SelectedItem text foreground -->
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                                                 Color="Black" />
+                            </Style.Resources>
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                        </Style>
+                    </ListBox.Resources>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{DynamicResource ListItem}" >
+                                <Grid Height="56">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Style="{DynamicResource ItemLabel}" Padding="45,0" HorizontalAlignment="Left" Content="{Binding Name}" Grid.Column="0"></Label>
+                                    <Label Style="{DynamicResource ItemLabel}" Padding="50,0" HorizontalAlignment="Right" Content="{Binding Distance, Converter={StaticResource DistanceToKilometersConverter}}" Grid.Column="1"></Label>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Style="{DynamicResource Title}" Text=".NET Developer Task" Padding="10"></TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Style="{DynamicResource TitleSmall}" Text="by" Padding="10"></TextBlock>
+                <Image Source="/WindowsParty.Ui;component/Assets/logo_white_sm.png" Stretch="None"></Image>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

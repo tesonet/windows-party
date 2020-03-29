@@ -1,0 +1,10 @@
+<!-- This file is always included to each project on build by default -->
+<Project>  
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>$(SolutionDir)\StyleCop.Analyzers.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(SolutionDir)\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+</Project>
