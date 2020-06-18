@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using ServerLocator.Client.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,19 +11,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ServerLocator.Client
+namespace ServerLocator.Client.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ShellView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ShellView : Window
     {
-        public MainWindow()
+        public ShellView()
         {
             InitializeComponent();
         }
+
     }
 }
