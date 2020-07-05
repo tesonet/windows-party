@@ -1,0 +1,13 @@
+﻿<Window x:Class="ServerFinder.Client.ApplicationShell.ShellView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ServerFinder.Client.ApplicationShell"
+      mc:Ignorable="d" 
+      MinHeight="390" MinWidth="730"
+      Title="Testio">
+    <Grid>
+        <ContentControl x:Name="ActiveItem" />
+    </Grid>
+</Window>
