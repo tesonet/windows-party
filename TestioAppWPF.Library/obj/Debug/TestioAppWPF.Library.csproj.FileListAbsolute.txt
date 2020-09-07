@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\bin\Debug\TestioAppWPF.Library.dll.config
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\bin\Debug\TestioAppWPF.Library.dll
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\bin\Debug\TestioAppWPF.Library.pdb
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\obj\Debug\TestioAppWPF.Library.csprojAssemblyReference.cache
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\obj\Debug\TestioAppWPF.Library.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\obj\Debug\TestioAppWPF.Library.csproj.CopyComplete
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\obj\Debug\TestioAppWPF.Library.dll
+C:\Users\User\source\repos\windows-party\TestioAppWPF.Library\obj\Debug\TestioAppWPF.Library.pdb

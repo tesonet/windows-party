@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\windows-party\TestioData\bin\Debug\TestioData.dacpac
+C:\Users\User\source\repos\windows-party\TestioData\bin\Debug\TestioData.dll
+C:\Users\User\source\repos\windows-party\TestioData\bin\Debug\TestioData.pdb
+C:\Users\User\source\repos\windows-party\TestioData\obj\Debug\TestioData.sqlprojAssemblyReference.cache
+C:\Users\User\source\repos\windows-party\TestioData\obj\Debug\Model.xml
+C:\Users\User\source\repos\windows-party\TestioData\obj\Debug\refactor.xml
+C:\Users\User\source\repos\windows-party\TestioData\obj\Debug\postdeploy.sql
+C:\Users\User\source\repos\windows-party\TestioData\obj\Debug\predeploy.sql
+C:\Users\User\source\repos\windows-party\TestioData\obj\Debug\TestioData.dll
+C:\Users\User\source\repos\windows-party\TestioData\obj\Debug\TestioData.pdb

@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageResizer.Plugins.PsdComposer</name>
+    </assembly>
+    <members>
+        <member name="T:ImageResizer.Plugins.PsdComposer.MemCachedFile">
+            <summary>
+            Caches a file in memory using the asp.net Cache object, while exposing methods for adding subkeys that invalidate along with the file if the source file is changed.
+            </summary>
+        </member>
+        <member name="F:ImageResizer.Plugins.PsdComposer.MemCachedFile.subkeys">
+            <summary>
+            For saving data parsed from the file
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.MemCachedFile.GetSubkey(System.String)">
+            <summary>
+            Remember, the object returned here may be accessed by multiple threads at the same time! No modifications!
+            </summary>
+            <param name="subkey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.MemCachedFile.GetStream">
+            <summary>
+            Wraps the byte array in a read-only stream
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.MemCachedFile.#ctor(System.String)">
+            <summary>
+            Reads the file into memory 
+            </summary>
+            <param name="physicalPath"></param>
+        </member>
+        <member name="F:ImageResizer.Plugins.PsdComposer.MemCachedFile._fallbackCache">
+            <summary>
+            Used only when there is not HTTP session.
+            </summary>
+        </member>
+        <member name="T:ImageResizer.Plugins.PsdComposer.PsdCommandBuilder">
+            <summary>
+            Layer names are case-insensitive. Asterisks can be used as wildcards to specify suffixes, prefixes, and search terms.
+            </summary>
+        </member>
+        <member name="F:ImageResizer.Plugins.PsdComposer.PsdCommandBuilder.renderer">
+            <summary>
+            Set the renderer. graphicsmill and psdplugin are the currently supported values
+            </summary>
+        </member>
+        <member name="T:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin">
+            <summary>
+            Allows you to edit PSD files (hide/show layers, change text layer contents, apply certain effects), and render them to JPEG, GIF, or PNG dynamically. Works as an IVirtualImageProvider, so you can post-process the composed result with any of the other plugins or commands.
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.#ctor">
+            <summary>
+            Creates a new instance of PsdComposer
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.Install(ImageResizer.Configuration.Config)">
+            <summary>
+            Adds the plugin to the given configuration container
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.Uninstall(ImageResizer.Configuration.Config)">
+            <summary>
+            Removes the plugin from the given configuration container
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.FileExists(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns true if the specified file and querystring indicate a PSD composition request
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetFile(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns a virtual file instance for the specified file and querystring, if they indicate a PSD composition request.
+            Otherwise, null is returned.
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetSupportedQuerystringKeys">
+            <summary>
+            Returns the querystrings command keys supported by this plugin. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetSupportedFileExtensions">
+            <summary>
+            Additional file types this plugin adds support for decoding.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetSelectedRenderer(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns the renderer object selected in the querystring
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.ComposeStream(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns a stream to the composed file, encoded in the format requested by the querystring or fake extension
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.ComposeBitmap(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns a Bitmap instance of the composed result
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetPsdDimensions(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns the size of the PSD 
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetAllLayers(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns a collection of all the layers for the specified file (memcached)
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetFileMetadata(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns a collection of all the layers for the specified file and the size of the file (memcached)
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetVisibleTextLayers(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Returns a collection of all visible text layers for the file (memcached). Useful for building image maps
+            </summary>
+            <param name="virtualPath"></param>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.BuildLayerCallback(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Creates a callback that can be used to filter layer visibility.
+            </summary>
+            <param name="queryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.ColorBitmap(System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary>
+            Mixes the specified color (using the included alpha value as a weight) into the bitmap, leaving the bitmap's original alpha values untouched.
+            </summary>
+            <param name="b"></param>
+            <param name="c"></param>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.IsPathPSDToCompose(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            True if the file is a .psd.jpeg, .psd.png, etc file.
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.StripFakeExtension(System.String)">
+            <summary>
+            Strips the .psd.jpg to .psd, converts to physical physicalPath
+            </summary>
+            <param name="virtualPath"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ImageResizer.Plugins.PsdComposer.PsdVirtualFile.Exists">
+            <summary>
+            Returns true if the row exists. 
+            </summary>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdVirtualFile.Open">
+            <summary>
+            Returns a stream of the encoded file bitmap using the current request querystring.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ImageResizer.Plugins.PsdComposer.PsdVirtualFile.GetBitmap">
+            <summary>
+            Returns a composed bitmap of the file using request querystring parameters.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
